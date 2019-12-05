@@ -71,7 +71,14 @@ namespace ProyectoPlanilla
             get { return sueldoBase; }
             set { sueldoBase = value; }
         }
-        
+
+        private Boolean estado;
+
+        public Boolean Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
 
     }
 }
