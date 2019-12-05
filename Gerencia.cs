@@ -8,12 +8,12 @@ namespace ProyectoPlanilla
 {
     class Gerencia
     {
-        private int isUsuario;
+        private int idUsuario;
 
         public int IdUsuario
         {
-            get { return isUsuario; }
-            set { isUsuario = value; }
+            get { return idUsuario; }
+            set { idUsuario = value; }
         }
 
         private Usuario usuario;

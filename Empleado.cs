@@ -8,22 +8,7 @@ namespace ProyectoPlanilla
 {
     class Empleado
     {
-        private string nombre;
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        private string apellido;
-
-        public string Apellido
-        {
-            get { return  apellido; }
-            set {  apellido = value; }
-        }
-
+           
         private DateTime fechaNacimiento;
 
         public DateTime FechaNacimiento
@@ -72,13 +57,7 @@ namespace ProyectoPlanilla
             set { sueldoBase = value; }
         }
 
-        private Boolean estado;
-
-        public Boolean Estado
-        {
-            get { return estado; }
-            set { estado = value; }
-        }
+       
 
     }
 }

@@ -15,22 +15,6 @@ namespace ProyectoPlanilla
             get { return id; }
         }
 
-        private string nombre;
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        private string apellido;
-
-        public string Apellido
-        {
-            get { return apellido; }
-            set { apellido = value; }
-        }
-
         private string login;
 
         public string Login
