@@ -8,7 +8,7 @@ namespace ProyectoPlanilla
 {
     class Persona
     {
-        private string nombre;
+        protected string nombre;
 
         public string Nombre
         {
@@ -16,7 +16,7 @@ namespace ProyectoPlanilla
             set { nombre = value; }
         }
 
-        private string apellido;
+        protected string apellido;
 
         public string Apellido
         {
@@ -24,7 +24,7 @@ namespace ProyectoPlanilla
             set { apellido = value; }
         }
 
-        private Boolean estado;
+        protected Boolean estado;
 
         public Boolean Estado
         {

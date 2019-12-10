@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProyectoPlanilla
 {
-    class Empleado
+    class Empleado : Persona
     {
-           
+        private const string TABLA = "Empleado";
+        Dictionary<string, string> parametros;
+
+
         private DateTime fechaNacimiento;
 
         public DateTime FechaNacimiento
@@ -17,9 +20,9 @@ namespace ProyectoPlanilla
             set { fechaNacimiento = value; }
         }
 
-        private string direccion    ;
+        private string direccion;
 
-        public string Direccion         
+        public string Direccion
         {
             get { return direccion; }
             set { direccion = value; }
@@ -46,7 +49,6 @@ namespace ProyectoPlanilla
         public DateTime Fecha
         {
             get { return fecha; }
-            set { fecha = value; }
         }
 
         private double sueldoBase;
@@ -57,7 +59,23 @@ namespace ProyectoPlanilla
             set { sueldoBase = value; }
         }
 
-       
+
+        public int Agregar()
+        {
+            parametros = new Dictionary<string, string>()
+            {
+                { "nombre", this.nombre },
+                { "apellido", this.apellido },
+                { "fechaNacimiento", this.fechaNacimiento.ToString("") },
+                { "direccion", this.direccion },
+                { "telefono", this.telefono },
+                { "sueldoBase", this.sueldoBase.ToString() },
+            };
+
+            Ejecutor.Insertar(TABLA, parametros);
+
+            return 0;
+        }
 
     }
 }

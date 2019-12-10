@@ -22,9 +22,13 @@ namespace ProyectoPlanilla
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Conexion conexion = Conexion.ObtenerInstancia();
+            Empleado emp = new Empleado();
+            emp.Agregar();
+
             //Debug.WriteLine(Conexion.Consultar("nombre", "usuario"));
-            var x = Conexion.Insertar("usuario", "login, clave, nombre", "'nestor2','cualquiera2', 'nestor2'");
-            Debug.WriteLine(x);
+            //var x = Conexion.Insertar("usuario", "login, clave, nombre", "'nestor2','cualquiera2', 'nestor2'");
+            //Debug.WriteLine(x);
             //Gerencia ger = new Gerencia();
             //var cadena = ConfigurationManager.ConnectionStrings["conexionPlanilla"].ConnectionString;
             //Debug.WriteLine("Cadenas de conexion: ");
