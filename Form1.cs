@@ -22,10 +22,20 @@ namespace ProyectoPlanilla
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Conexion conexion = Conexion.ObtenerInstancia();
-            Empleado emp = new Empleado();
+            Empleado emp = new Empleado()
+            {
+                Nombre = "Marcela",
+                Apellido = "Orellana",
+                Direccion = "La Libertad",
+                Email = "marcela@hotmail.com",
+                FechaNacimiento = new DateTime(1994, 02, 12),
+                SueldoBase = 750,
+                Telefono = "7232-1209",
+                Sexo = "Mujer"
+            };
             emp.Agregar();
 
+            //Conexion conexion = Conexion.ObtenerInstancia();
             //Debug.WriteLine(Conexion.Consultar("nombre", "usuario"));
             //var x = Conexion.Insertar("usuario", "login, clave, nombre", "'nestor2','cualquiera2', 'nestor2'");
             //Debug.WriteLine(x);

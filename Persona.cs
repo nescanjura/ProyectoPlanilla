@@ -24,6 +24,15 @@ namespace ProyectoPlanilla
             set { apellido = value; }
         }
 
+        private string sexo;
+
+        public string Sexo
+        {
+            get { return sexo; }
+            set { sexo = value; }
+        }
+
+
         protected Boolean estado;
 
         public Boolean Estado

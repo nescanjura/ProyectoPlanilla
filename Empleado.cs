@@ -9,7 +9,7 @@ namespace ProyectoPlanilla
     class Empleado : Persona
     {
         private const string TABLA = "Empleado";
-        Dictionary<string, string> parametros;
+        Dictionary<string, object> parametros;
 
 
         private DateTime fechaNacimiento;
@@ -62,14 +62,14 @@ namespace ProyectoPlanilla
 
         public int Agregar()
         {
-            parametros = new Dictionary<string, string>()
+            parametros = new Dictionary<string, object>()
             {
                 { "nombre", this.nombre },
                 { "apellido", this.apellido },
-                { "fechaNacimiento", this.fechaNacimiento.ToString("") },
+                { "fechaNacimiento", this.fechaNacimiento.ToString("dd/MM/yyyy") },
                 { "direccion", this.direccion },
                 { "telefono", this.telefono },
-                { "sueldoBase", this.sueldoBase.ToString() },
+                { "sueldoBase", this.sueldoBase },
             };
 
             Ejecutor.Insertar(TABLA, parametros);

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.OleDb;
+﻿using System.Data.OleDb;
 using System.Configuration;
-using System.Diagnostics;
 
 namespace ProyectoPlanilla
 {
+    // Manejo de conexión a BD utilizando el patrón Singleton
     public class Conexion
     {
         private static Conexion conexion;
 
-        protected Conexion() { }
+        private Conexion() { } // No se debe permitir hacer instancias directamente
 
-        public static Conexion ObtenerInstancia()
+        public static Conexion ObtenerInstancia() // Devolver una única instancia siempre
         {
             if (conexion == null)
                 conexion = new Conexion();
@@ -23,38 +18,13 @@ namespace ProyectoPlanilla
             return conexion;
         }
 
-
+        // Devolver la conexión a la base de datos
         public OleDbConnection ObtenerConexion()
         {
+            // La cadena de conexión está en un ConnectionString
             string cadena = ConfigurationManager.ConnectionStrings["conexionPlanilla"].ConnectionString;
-            OleDbConnection cnx = new OleDbConnection(cadena);
-            return cnx;
+            OleDbConnection cnx = new OleDbConnection(cadena); // Crear la conexión
+            return cnx; // Devolver la conexión
         }
-
-        //public static OleDbDataReader Consultar(string campos, string tabla, string condicion = "1=1")
-        //{
-        //    var cnx = Conexion.ObtenerConexion();
-            
-        //    string queryString = $"SELECT {campos} FROM {tabla} WHERE {condicion} ";
-        //    Debug.WriteLine(queryString);
-        //    OleDbCommand command = new OleDbCommand(queryString, cnx);
-        //    cnx.Open();
-
-        //    OleDbDataReader reader = command.ExecuteReader();
-        //    Debug.WriteLine(reader.FieldCount);
-        //    return reader;
-
-        //}
-
-        //public static int Insertar(string tabla, string campos, string valores)
-        //{
-        //    var cnx = Conexion.ObtenerConexion(); 
-        //    string sql = $"INSERT INTO {tabla} ({campos}) values ({valores})";
-        //    Debug.WriteLine(sql);
-
-        //    OleDbCommand cmd = new OleDbCommand(sql, cnx);
-        //    cnx.Open();
-        //    return cmd.ExecuteNonQuery();
-        //}
     }
 }
