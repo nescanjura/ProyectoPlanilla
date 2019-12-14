@@ -102,6 +102,13 @@ namespace ProyectoPlanilla
             return idRegistro; // Devolver ID del registro insertado
         }
 
+        /// <summary>
+        /// Modifica datos de la base de datos según los parámetros enviados
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <param name="parametros"></param>
+        /// <param name="condiciones"></param>
+        /// <returns></returns>
         public static bool Actualizar(string tabla, Dictionary<string, object> parametros, string condiciones)
         {
             bool resultado = false;
@@ -135,7 +142,7 @@ namespace ProyectoPlanilla
                         cmd.Parameters[p.Key].Value = p.Value ?? DBNull.Value;
 
                     cmd.Prepare(); // Preparar la instrucción sql
-                    cmd.ExecuteNonQuery(); // Ejecutar el SQL
+                    resultado = cmd.ExecuteNonQuery() == 1 ? true : false; // Ejecutar el SQL
                 }
                 catch (Exception ex)
                 {
@@ -153,7 +160,7 @@ namespace ProyectoPlanilla
         /// <param name="campos"></param>
         /// <param name="condiciones"></param>
         /// <returns></returns>
-        public static String Consultar(string tabla, string campos, string condiciones = "1=1")
+        public static string Consultar(string tabla, string campos, string condiciones = "1=1")
         {
             Conexion conex = Conexion.ObtenerInstancia(); // Obtener la instancia de la clase Conexión
             OleDbConnection cnx = conex.ObtenerConexion(); // Obtener la conexión a la BD
@@ -191,6 +198,34 @@ namespace ProyectoPlanilla
 
                 return sw.ToString(); // Devolver el arreglo JSON como string
             };
+        }
+
+        /// <summary>
+        /// Elimina un registro de la base de datos y devuelve falso si no se pudo eliminar el registro o verdadero en caso que se haya podido
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <param name="condicion"></param>
+        /// <returns></returns>
+        public static bool Eliminar(string tabla, string condicion)
+        {
+            bool resultado = false;
+            Conexion conex = Conexion.ObtenerInstancia(); // Obtener la instancia de la clase Conexión
+            OleDbConnection cnx = conex.ObtenerConexion(); // Obtener la conexión a la BD
+
+            using (OleDbCommand cmd = cnx.CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = $"DELETE FROM {tabla} WHERE {condicion}";
+                    resultado = cmd.ExecuteNonQuery() == 1 ? true : false;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+            return resultado;
         }
     }
 }

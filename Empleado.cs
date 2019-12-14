@@ -11,11 +11,11 @@ namespace ProyectoPlanilla
     class Empleado : Persona
     {
         const string TABLA = "Empleado";
+        const string CONDICION_ESTADO = "estado = true";
         Dictionary<string, object> parametros;
         JArray elementos = null;
         string campos = "*";
         string condiciones = "";
-
 
         private DateTime fechaNacimiento;
 
@@ -66,7 +66,7 @@ namespace ProyectoPlanilla
 
         public Empleado Obtener(int id)
         {
-            condiciones = $"ID = {id}";
+            condiciones = $"ID = {id} AND {CONDICION_ESTADO}";
             string str = Ejecutor.Consultar(TABLA, campos, condiciones);
             elementos = JArray.Parse(str);
 
@@ -74,7 +74,7 @@ namespace ProyectoPlanilla
 
             return new Empleado()
             {
-                id = (int)first["Id"],
+                id = (int)first["id"],
                 Nombre = first["nombre"].ToString(),
                 Apellido = first["apellido"].ToString(),
                 FechaNacimiento = Convert.ToDateTime(first["fechaNacimiento"].ToString()),
@@ -82,7 +82,7 @@ namespace ProyectoPlanilla
                 Direccion = first["direccion"].ToString(),
                 Telefono = first["telefono"].ToString(),
                 sueldoBase = Convert.ToDouble(first["sueldoBase"].ToString()),
-                //Estado = (bool)first["estado"]
+                Estado = (bool)first["estado"]
             };
         }
 
@@ -128,7 +128,7 @@ namespace ProyectoPlanilla
             List<Empleado> resultado = new List<Empleado>();
             try
             {
-                string str = Ejecutor.Consultar(TABLA, campos);
+                string str = Ejecutor.Consultar(TABLA, campos, CONDICION_ESTADO);
                 elementos = JArray.Parse(str);
 
                 foreach (JObject el in elementos)
@@ -153,5 +153,14 @@ namespace ProyectoPlanilla
             return resultado;
         }
 
+        public bool Eliminar(bool quitar = false)
+        {
+            if (id == null) return false;
+
+            if (quitar)
+                return Ejecutor.Eliminar(TABLA, $"Id = {this.id}"); // Eliminar el registro de la base
+            else
+                return Ejecutor.Actualizar(TABLA, new Dictionary<string, object>() { { "estado", false } } , $"Id = {this.id}"); // Cambiar estado a false
+        }
     }
 }
