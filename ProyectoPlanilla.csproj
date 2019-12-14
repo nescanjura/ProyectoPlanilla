@@ -166,6 +166,12 @@
     <Compile Include="FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUsuario2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuario2.Designer.cs">
+      <DependentUpon>FrmUsuario2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gerencia.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Planilla.cs" />
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuario2.resx">
+      <DependentUpon>FrmUsuario2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
