@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.GbxControles = new System.Windows.Forms.GroupBox();
+            this.GbxControlesPlanilla = new System.Windows.Forms.GroupBox();
             this.CmdCrearPlanilla = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
-            this.planillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.PlanillaTableAdapter();
+            this.DgvPlanilla = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.GbxControles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
+            this.planillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.planillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.PlanillaTableAdapter();
+            this.GbxControlesPlanilla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPlanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planillaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // GbxControles
+            // GbxControlesPlanilla
             // 
-            this.GbxControles.Controls.Add(this.CmdCrearPlanilla);
-            this.GbxControles.Location = new System.Drawing.Point(403, 220);
-            this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(137, 83);
-            this.GbxControles.TabIndex = 3;
-            this.GbxControles.TabStop = false;
-            this.GbxControles.Text = "Controles";
+            this.GbxControlesPlanilla.Controls.Add(this.CmdCrearPlanilla);
+            this.GbxControlesPlanilla.Location = new System.Drawing.Point(403, 220);
+            this.GbxControlesPlanilla.Name = "GbxControlesPlanilla";
+            this.GbxControlesPlanilla.Size = new System.Drawing.Size(137, 83);
+            this.GbxControlesPlanilla.TabIndex = 3;
+            this.GbxControlesPlanilla.TabStop = false;
+            this.GbxControlesPlanilla.Text = "Controles";
             // 
             // CmdCrearPlanilla
             // 
@@ -66,38 +66,24 @@
             this.CmdCrearPlanilla.Text = "Crear";
             this.CmdCrearPlanilla.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DgvPlanilla
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvPlanilla.AutoGenerateColumns = false;
+            this.DgvPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvPlanilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.idUsuarioDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
             this.Actualizar,
             this.Eliminar});
-            this.dataGridView1.DataSource = this.planillaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 153);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // proyectoPlanillaDataSet
-            // 
-            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
-            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // planillaBindingSource
-            // 
-            this.planillaBindingSource.DataMember = "Planilla";
-            this.planillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
-            // 
-            // planillaTableAdapter
-            // 
-            this.planillaTableAdapter.ClearBeforeFill = true;
+            this.DgvPlanilla.DataSource = this.planillaBindingSource;
+            this.DgvPlanilla.Location = new System.Drawing.Point(39, 38);
+            this.DgvPlanilla.Name = "DgvPlanilla";
+            this.DgvPlanilla.RowHeadersWidth = 51;
+            this.DgvPlanilla.RowTemplate.Height = 24;
+            this.DgvPlanilla.Size = new System.Drawing.Size(847, 153);
+            this.DgvPlanilla.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -147,29 +133,43 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Width = 125;
             // 
+            // planillaBindingSource
+            // 
+            this.planillaBindingSource.DataMember = "Planilla";
+            this.planillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
+            // 
+            // proyectoPlanillaDataSet
+            // 
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // planillaTableAdapter
+            // 
+            this.planillaTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 322);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.GbxControles);
+            this.Controls.Add(this.DgvPlanilla);
+            this.Controls.Add(this.GbxControlesPlanilla);
             this.Name = "FrmPlanilla";
             this.Text = "Pantalla Planilla";
             this.Load += new System.EventHandler(this.FrmPlanilla_Load);
-            this.GbxControles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
+            this.GbxControlesPlanilla.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPlanilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planillaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox GbxControles;
+        private System.Windows.Forms.GroupBox GbxControlesPlanilla;
         private System.Windows.Forms.Button CmdCrearPlanilla;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvPlanilla;
         private ProyectoPlanillaDataSet proyectoPlanillaDataSet;
         private System.Windows.Forms.BindingSource planillaBindingSource;
         private ProyectoPlanillaDataSetTableAdapters.PlanillaTableAdapter planillaTableAdapter;

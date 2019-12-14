@@ -33,20 +33,20 @@
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.UsuarioTableAdapter();
             this.tableAdapterManager = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.TableAdapterManager();
-            this.GbxControles = new System.Windows.Forms.GroupBox();
+            this.GbxControlesUsuario = new System.Windows.Forms.GroupBox();
             this.CmdCrearUsuario = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usuarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.DgvUsuario = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.usuarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            this.GbxControles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GbxControlesUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,15 +75,15 @@
             this.tableAdapterManager.UpdateOrder = ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = this.usuarioTableAdapter;
             // 
-            // GbxControles
+            // GbxControlesUsuario
             // 
-            this.GbxControles.Controls.Add(this.CmdCrearUsuario);
-            this.GbxControles.Location = new System.Drawing.Point(368, 280);
-            this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(157, 84);
-            this.GbxControles.TabIndex = 1;
-            this.GbxControles.TabStop = false;
-            this.GbxControles.Text = "Controles";
+            this.GbxControlesUsuario.Controls.Add(this.CmdCrearUsuario);
+            this.GbxControlesUsuario.Location = new System.Drawing.Point(368, 280);
+            this.GbxControlesUsuario.Name = "GbxControlesUsuario";
+            this.GbxControlesUsuario.Size = new System.Drawing.Size(157, 84);
+            this.GbxControlesUsuario.TabIndex = 1;
+            this.GbxControlesUsuario.TabStop = false;
+            this.GbxControlesUsuario.Text = "Controles";
             // 
             // CmdCrearUsuario
             // 
@@ -94,29 +94,25 @@
             this.CmdCrearUsuario.Text = "Crear";
             this.CmdCrearUsuario.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DgvUsuario
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvUsuario.AutoGenerateColumns = false;
+            this.DgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.loginDataGridViewTextBoxColumn,
             this.claveDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.Actualizar,
             this.Eliminar});
-            this.dataGridView1.DataSource = this.usuarioBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 36);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(874, 200);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // usuarioBindingSource1
-            // 
-            this.usuarioBindingSource1.DataMember = "Usuario";
-            this.usuarioBindingSource1.DataSource = this.proyectoPlanillaDataSet;
+            this.DgvUsuario.DataSource = this.usuarioBindingSource1;
+            this.DgvUsuario.Location = new System.Drawing.Point(23, 36);
+            this.DgvUsuario.Name = "DgvUsuario";
+            this.DgvUsuario.RowHeadersWidth = 51;
+            this.DgvUsuario.RowTemplate.Height = 24;
+            this.DgvUsuario.Size = new System.Drawing.Size(874, 200);
+            this.DgvUsuario.TabIndex = 2;
+            this.DgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -164,21 +160,26 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Width = 125;
             // 
+            // usuarioBindingSource1
+            // 
+            this.usuarioBindingSource1.DataMember = "Usuario";
+            this.usuarioBindingSource1.DataSource = this.proyectoPlanillaDataSet;
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 376);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.GbxControles);
+            this.Controls.Add(this.DgvUsuario);
+            this.Controls.Add(this.GbxControlesUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmUsuario";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            this.GbxControles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.GbxControlesUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -190,9 +191,9 @@
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private ProyectoPlanillaDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
         private ProyectoPlanillaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.GroupBox GbxControles;
+        private System.Windows.Forms.GroupBox GbxControlesUsuario;
         private System.Windows.Forms.Button CmdCrearUsuario;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveDataGridViewTextBoxColumn;

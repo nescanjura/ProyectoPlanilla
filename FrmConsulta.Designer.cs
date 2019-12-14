@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.GbxControles = new System.Windows.Forms.GroupBox();
+            this.GbxControlesConsulta = new System.Windows.Forms.GroupBox();
             this.CmdImprimirConsulta = new System.Windows.Forms.Button();
             this.GbxDatosUsuarios = new System.Windows.Forms.GroupBox();
-            this.CmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.CmbEmpleadoConsulta = new System.Windows.Forms.ComboBox();
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
             this.DtpConsultaFin = new System.Windows.Forms.DateTimePicker();
@@ -41,21 +41,21 @@
             this.LblFecFin = new System.Windows.Forms.Label();
             this.LblFecInicio = new System.Windows.Forms.Label();
             this.empleadoTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.EmpleadoTableAdapter();
-            this.GbxControles.SuspendLayout();
+            this.GbxControlesConsulta.SuspendLayout();
             this.GbxDatosUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // GbxControles
+            // GbxControlesConsulta
             // 
-            this.GbxControles.Controls.Add(this.CmdImprimirConsulta);
-            this.GbxControles.Location = new System.Drawing.Point(36, 290);
-            this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(423, 85);
-            this.GbxControles.TabIndex = 3;
-            this.GbxControles.TabStop = false;
-            this.GbxControles.Text = "Controles";
+            this.GbxControlesConsulta.Controls.Add(this.CmdImprimirConsulta);
+            this.GbxControlesConsulta.Location = new System.Drawing.Point(36, 290);
+            this.GbxControlesConsulta.Name = "GbxControlesConsulta";
+            this.GbxControlesConsulta.Size = new System.Drawing.Size(423, 85);
+            this.GbxControlesConsulta.TabIndex = 3;
+            this.GbxControlesConsulta.TabStop = false;
+            this.GbxControlesConsulta.Text = "Controles";
             // 
             // CmdImprimirConsulta
             // 
@@ -69,7 +69,7 @@
             // 
             // GbxDatosUsuarios
             // 
-            this.GbxDatosUsuarios.Controls.Add(this.CmbEmpleado);
+            this.GbxDatosUsuarios.Controls.Add(this.CmbEmpleadoConsulta);
             this.GbxDatosUsuarios.Controls.Add(this.DtpConsultaFin);
             this.GbxDatosUsuarios.Controls.Add(this.DtpConsultaInicio);
             this.GbxDatosUsuarios.Controls.Add(this.LblEmpleado);
@@ -82,14 +82,14 @@
             this.GbxDatosUsuarios.TabStop = false;
             this.GbxDatosUsuarios.Text = "Datos";
             // 
-            // CmbEmpleado
+            // CmbEmpleadoConsulta
             // 
-            this.CmbEmpleado.DataSource = this.empleadoBindingSource;
-            this.CmbEmpleado.FormattingEnabled = true;
-            this.CmbEmpleado.Location = new System.Drawing.Point(131, 156);
-            this.CmbEmpleado.Name = "CmbEmpleado";
-            this.CmbEmpleado.Size = new System.Drawing.Size(254, 24);
-            this.CmbEmpleado.TabIndex = 4;
+            this.CmbEmpleadoConsulta.DataSource = this.empleadoBindingSource;
+            this.CmbEmpleadoConsulta.FormattingEnabled = true;
+            this.CmbEmpleadoConsulta.Location = new System.Drawing.Point(131, 156);
+            this.CmbEmpleadoConsulta.Name = "CmbEmpleadoConsulta";
+            this.CmbEmpleadoConsulta.Size = new System.Drawing.Size(254, 24);
+            this.CmbEmpleadoConsulta.TabIndex = 4;
             // 
             // empleadoBindingSource
             // 
@@ -151,12 +151,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 423);
-            this.Controls.Add(this.GbxControles);
+            this.Controls.Add(this.GbxControlesConsulta);
             this.Controls.Add(this.GbxDatosUsuarios);
             this.Name = "FrmConsulta";
             this.Text = "Pantalla Consulta";
             this.Load += new System.EventHandler(this.FrmConsulta_Load);
-            this.GbxControles.ResumeLayout(false);
+            this.GbxControlesConsulta.ResumeLayout(false);
             this.GbxDatosUsuarios.ResumeLayout(false);
             this.GbxDatosUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
@@ -167,10 +167,10 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox GbxControles;
+        private System.Windows.Forms.GroupBox GbxControlesConsulta;
         private System.Windows.Forms.Button CmdImprimirConsulta;
         private System.Windows.Forms.GroupBox GbxDatosUsuarios;
-        private System.Windows.Forms.ComboBox CmbEmpleado;
+        private System.Windows.Forms.ComboBox CmbEmpleadoConsulta;
         private System.Windows.Forms.DateTimePicker DtpConsultaFin;
         private System.Windows.Forms.DateTimePicker DtpConsultaInicio;
         private System.Windows.Forms.Label LblEmpleado;

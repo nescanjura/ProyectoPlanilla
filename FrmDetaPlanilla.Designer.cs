@@ -45,12 +45,12 @@
             this.detaPlanillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
             this.detaPlanillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter();
-            this.GbxControles = new System.Windows.Forms.GroupBox();
+            this.GbxControlesDetaPlanilla = new System.Windows.Forms.GroupBox();
             this.CmdCrearDetallePlanila = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetaPlanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaPlanillaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
-            this.GbxControles.SuspendLayout();
+            this.GbxControlesDetaPlanilla.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvDetaPlanilla
@@ -190,15 +190,15 @@
             // 
             this.detaPlanillaTableAdapter.ClearBeforeFill = true;
             // 
-            // GbxControles
+            // GbxControlesDetaPlanilla
             // 
-            this.GbxControles.Controls.Add(this.CmdCrearDetallePlanila);
-            this.GbxControles.Location = new System.Drawing.Point(475, 322);
-            this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(144, 88);
-            this.GbxControles.TabIndex = 2;
-            this.GbxControles.TabStop = false;
-            this.GbxControles.Text = "Controles";
+            this.GbxControlesDetaPlanilla.Controls.Add(this.CmdCrearDetallePlanila);
+            this.GbxControlesDetaPlanilla.Location = new System.Drawing.Point(475, 322);
+            this.GbxControlesDetaPlanilla.Name = "GbxControlesDetaPlanilla";
+            this.GbxControlesDetaPlanilla.Size = new System.Drawing.Size(144, 88);
+            this.GbxControlesDetaPlanilla.TabIndex = 2;
+            this.GbxControlesDetaPlanilla.TabStop = false;
+            this.GbxControlesDetaPlanilla.Text = "Controles";
             // 
             // CmdCrearDetallePlanila
             // 
@@ -214,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 441);
-            this.Controls.Add(this.GbxControles);
+            this.Controls.Add(this.GbxControlesDetaPlanilla);
             this.Controls.Add(this.DgvDetaPlanilla);
             this.Name = "FrmDetaPlanilla";
             this.Text = "FrmDetaPlanilla";
@@ -222,7 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetaPlanilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaPlanillaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
-            this.GbxControles.ResumeLayout(false);
+            this.GbxControlesDetaPlanilla.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -233,7 +233,7 @@
         private ProyectoPlanillaDataSet proyectoPlanillaDataSet;
         private System.Windows.Forms.BindingSource detaPlanillaBindingSource;
         private ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter detaPlanillaTableAdapter;
-        private System.Windows.Forms.GroupBox GbxControles;
+        private System.Windows.Forms.GroupBox GbxControlesDetaPlanilla;
         private System.Windows.Forms.Button CmdCrearDetallePlanila;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
