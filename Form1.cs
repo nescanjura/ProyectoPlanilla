@@ -51,7 +51,7 @@ namespace ProyectoPlanilla
         private void uSUARIOToolStripMenuItem_Click(object sender, EventArgs e)
         {
               
-                FrmUsuario2 Nuevo = new FrmUsuario2();
+                FrmUsuario Nuevo = new FrmUsuario();
                 Nuevo.MdiParent = this;
                 Nuevo.Show();
             

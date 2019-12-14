@@ -33,21 +33,21 @@
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.UsuarioTableAdapter();
             this.tableAdapterManager = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.TableAdapterManager();
-            this.GbxDatosUsuarios = new System.Windows.Forms.GroupBox();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
-            this.TxtClave = new System.Windows.Forms.TextBox();
-            this.TxtLogin = new System.Windows.Forms.TextBox();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.LblClave = new System.Windows.Forms.Label();
-            this.LblLogin = new System.Windows.Forms.Label();
             this.GbxControles = new System.Windows.Forms.GroupBox();
-            this.CmdEliminarUsuario = new System.Windows.Forms.Button();
-            this.CmdActualizarUsuario = new System.Windows.Forms.Button();
             this.CmdCrearUsuario = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usuarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            this.GbxDatosUsuarios.SuspendLayout();
             this.GbxControles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // proyectoPlanillaDataSet
@@ -75,100 +75,15 @@
             this.tableAdapterManager.UpdateOrder = ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = this.usuarioTableAdapter;
             // 
-            // GbxDatosUsuarios
-            // 
-            this.GbxDatosUsuarios.Controls.Add(this.TxtUsuario);
-            this.GbxDatosUsuarios.Controls.Add(this.TxtClave);
-            this.GbxDatosUsuarios.Controls.Add(this.TxtLogin);
-            this.GbxDatosUsuarios.Controls.Add(this.LblUsuario);
-            this.GbxDatosUsuarios.Controls.Add(this.LblClave);
-            this.GbxDatosUsuarios.Controls.Add(this.LblLogin);
-            this.GbxDatosUsuarios.Location = new System.Drawing.Point(29, 47);
-            this.GbxDatosUsuarios.Name = "GbxDatosUsuarios";
-            this.GbxDatosUsuarios.Size = new System.Drawing.Size(423, 210);
-            this.GbxDatosUsuarios.TabIndex = 0;
-            this.GbxDatosUsuarios.TabStop = false;
-            this.GbxDatosUsuarios.Text = "Datos";
-            // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Location = new System.Drawing.Point(136, 148);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(263, 22);
-            this.TxtUsuario.TabIndex = 2;
-            // 
-            // TxtClave
-            // 
-            this.TxtClave.Location = new System.Drawing.Point(136, 101);
-            this.TxtClave.Name = "TxtClave";
-            this.TxtClave.PasswordChar = '*';
-            this.TxtClave.Size = new System.Drawing.Size(263, 22);
-            this.TxtClave.TabIndex = 2;
-            // 
-            // TxtLogin
-            // 
-            this.TxtLogin.Location = new System.Drawing.Point(136, 54);
-            this.TxtLogin.Name = "TxtLogin";
-            this.TxtLogin.Size = new System.Drawing.Size(263, 22);
-            this.TxtLogin.TabIndex = 2;
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(33, 153);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(57, 17);
-            this.LblUsuario.TabIndex = 1;
-            this.LblUsuario.Text = "Usuario";
-            // 
-            // LblClave
-            // 
-            this.LblClave.AutoSize = true;
-            this.LblClave.Location = new System.Drawing.Point(30, 106);
-            this.LblClave.Name = "LblClave";
-            this.LblClave.Size = new System.Drawing.Size(43, 17);
-            this.LblClave.TabIndex = 1;
-            this.LblClave.Text = "Clave";
-            // 
-            // LblLogin
-            // 
-            this.LblLogin.AutoSize = true;
-            this.LblLogin.Location = new System.Drawing.Point(30, 59);
-            this.LblLogin.Name = "LblLogin";
-            this.LblLogin.Size = new System.Drawing.Size(43, 17);
-            this.LblLogin.TabIndex = 0;
-            this.LblLogin.Text = "Login";
-            // 
             // GbxControles
             // 
-            this.GbxControles.Controls.Add(this.CmdEliminarUsuario);
-            this.GbxControles.Controls.Add(this.CmdActualizarUsuario);
             this.GbxControles.Controls.Add(this.CmdCrearUsuario);
-            this.GbxControles.Location = new System.Drawing.Point(29, 297);
+            this.GbxControles.Location = new System.Drawing.Point(368, 280);
             this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(423, 85);
+            this.GbxControles.Size = new System.Drawing.Size(157, 84);
             this.GbxControles.TabIndex = 1;
             this.GbxControles.TabStop = false;
             this.GbxControles.Text = "Controles";
-            // 
-            // CmdEliminarUsuario
-            // 
-            this.CmdEliminarUsuario.Location = new System.Drawing.Point(324, 32);
-            this.CmdEliminarUsuario.Name = "CmdEliminarUsuario";
-            this.CmdEliminarUsuario.Size = new System.Drawing.Size(75, 32);
-            this.CmdEliminarUsuario.TabIndex = 0;
-            this.CmdEliminarUsuario.Text = "Eliminar";
-            this.CmdEliminarUsuario.UseVisualStyleBackColor = true;
-            this.CmdEliminarUsuario.Click += new System.EventHandler(this.CmdEliminarUsuario_Click);
-            // 
-            // CmdActualizarUsuario
-            // 
-            this.CmdActualizarUsuario.Location = new System.Drawing.Point(160, 32);
-            this.CmdActualizarUsuario.Name = "CmdActualizarUsuario";
-            this.CmdActualizarUsuario.Size = new System.Drawing.Size(125, 32);
-            this.CmdActualizarUsuario.TabIndex = 0;
-            this.CmdActualizarUsuario.Text = "Actualizar";
-            this.CmdActualizarUsuario.UseVisualStyleBackColor = true;
             // 
             // CmdCrearUsuario
             // 
@@ -179,22 +94,92 @@
             this.CmdCrearUsuario.Text = "Crear";
             this.CmdCrearUsuario.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.claveDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.Actualizar,
+            this.Eliminar});
+            this.dataGridView1.DataSource = this.usuarioBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 36);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(874, 200);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // usuarioBindingSource1
+            // 
+            this.usuarioBindingSource1.DataMember = "Usuario";
+            this.usuarioBindingSource1.DataSource = this.proyectoPlanillaDataSet;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
+            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // claveDataGridViewTextBoxColumn
+            // 
+            this.claveDataGridViewTextBoxColumn.DataPropertyName = "clave";
+            this.claveDataGridViewTextBoxColumn.HeaderText = "clave";
+            this.claveDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.claveDataGridViewTextBoxColumn.Name = "claveDataGridViewTextBoxColumn";
+            this.claveDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Actualizar
+            // 
+            this.Actualizar.HeaderText = "";
+            this.Actualizar.MinimumWidth = 6;
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.Width = 125;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 125;
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 410);
+            this.ClientSize = new System.Drawing.Size(936, 376);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.GbxControles);
-            this.Controls.Add(this.GbxDatosUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmUsuario";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            this.GbxDatosUsuarios.ResumeLayout(false);
-            this.GbxDatosUsuarios.PerformLayout();
             this.GbxControles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,16 +190,15 @@
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private ProyectoPlanillaDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
         private ProyectoPlanillaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.GroupBox GbxDatosUsuarios;
-        private System.Windows.Forms.Label LblClave;
-        private System.Windows.Forms.Label LblLogin;
-        private System.Windows.Forms.TextBox TxtUsuario;
-        private System.Windows.Forms.TextBox TxtClave;
-        private System.Windows.Forms.TextBox TxtLogin;
-        private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.GroupBox GbxControles;
-        private System.Windows.Forms.Button CmdEliminarUsuario;
-        private System.Windows.Forms.Button CmdActualizarUsuario;
         private System.Windows.Forms.Button CmdCrearUsuario;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn claveDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Actualizar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.BindingSource usuarioBindingSource1;
     }
 }

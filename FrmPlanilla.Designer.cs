@@ -28,48 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GbxControles = new System.Windows.Forms.GroupBox();
-            this.CmdEliminarPlanilla = new System.Windows.Forms.Button();
-            this.CmdActualizarPlanilla = new System.Windows.Forms.Button();
             this.CmdCrearPlanilla = new System.Windows.Forms.Button();
-            this.GbxDatosUsuarios = new System.Windows.Forms.GroupBox();
-            this.TxtMesPlanilla = new System.Windows.Forms.TextBox();
-            this.TxtNombrePlanilla = new System.Windows.Forms.TextBox();
-            this.LblMesPlanilla = new System.Windows.Forms.Label();
-            this.LblNombrePlanilla = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.planillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.planillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.PlanillaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.GbxControles.SuspendLayout();
-            this.GbxDatosUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planillaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // GbxControles
             // 
-            this.GbxControles.Controls.Add(this.CmdEliminarPlanilla);
-            this.GbxControles.Controls.Add(this.CmdActualizarPlanilla);
             this.GbxControles.Controls.Add(this.CmdCrearPlanilla);
-            this.GbxControles.Location = new System.Drawing.Point(39, 226);
+            this.GbxControles.Location = new System.Drawing.Point(403, 220);
             this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(423, 85);
+            this.GbxControles.Size = new System.Drawing.Size(137, 83);
             this.GbxControles.TabIndex = 3;
             this.GbxControles.TabStop = false;
             this.GbxControles.Text = "Controles";
-            // 
-            // CmdEliminarPlanilla
-            // 
-            this.CmdEliminarPlanilla.Location = new System.Drawing.Point(324, 32);
-            this.CmdEliminarPlanilla.Name = "CmdEliminarPlanilla";
-            this.CmdEliminarPlanilla.Size = new System.Drawing.Size(75, 32);
-            this.CmdEliminarPlanilla.TabIndex = 0;
-            this.CmdEliminarPlanilla.Text = "Eliminar";
-            this.CmdEliminarPlanilla.UseVisualStyleBackColor = true;
-            // 
-            // CmdActualizarPlanilla
-            // 
-            this.CmdActualizarPlanilla.Location = new System.Drawing.Point(160, 32);
-            this.CmdActualizarPlanilla.Name = "CmdActualizarPlanilla";
-            this.CmdActualizarPlanilla.Size = new System.Drawing.Size(125, 32);
-            this.CmdActualizarPlanilla.TabIndex = 0;
-            this.CmdActualizarPlanilla.Text = "Actualizar";
-            this.CmdActualizarPlanilla.UseVisualStyleBackColor = true;
             // 
             // CmdCrearPlanilla
             // 
@@ -80,64 +66,101 @@
             this.CmdCrearPlanilla.Text = "Crear";
             this.CmdCrearPlanilla.UseVisualStyleBackColor = true;
             // 
-            // GbxDatosUsuarios
+            // dataGridView1
             // 
-            this.GbxDatosUsuarios.Controls.Add(this.TxtMesPlanilla);
-            this.GbxDatosUsuarios.Controls.Add(this.TxtNombrePlanilla);
-            this.GbxDatosUsuarios.Controls.Add(this.LblMesPlanilla);
-            this.GbxDatosUsuarios.Controls.Add(this.LblNombrePlanilla);
-            this.GbxDatosUsuarios.Location = new System.Drawing.Point(39, 32);
-            this.GbxDatosUsuarios.Name = "GbxDatosUsuarios";
-            this.GbxDatosUsuarios.Size = new System.Drawing.Size(423, 151);
-            this.GbxDatosUsuarios.TabIndex = 2;
-            this.GbxDatosUsuarios.TabStop = false;
-            this.GbxDatosUsuarios.Text = "Datos";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.idUsuarioDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.Actualizar,
+            this.Eliminar});
+            this.dataGridView1.DataSource = this.planillaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(847, 153);
+            this.dataGridView1.TabIndex = 4;
             // 
-            // TxtMesPlanilla
+            // proyectoPlanillaDataSet
             // 
-            this.TxtMesPlanilla.Location = new System.Drawing.Point(136, 101);
-            this.TxtMesPlanilla.Name = "TxtMesPlanilla";
-            this.TxtMesPlanilla.PasswordChar = '*';
-            this.TxtMesPlanilla.Size = new System.Drawing.Size(263, 22);
-            this.TxtMesPlanilla.TabIndex = 2;
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // TxtNombrePlanilla
+            // planillaBindingSource
             // 
-            this.TxtNombrePlanilla.Location = new System.Drawing.Point(136, 54);
-            this.TxtNombrePlanilla.Name = "TxtNombrePlanilla";
-            this.TxtNombrePlanilla.Size = new System.Drawing.Size(263, 22);
-            this.TxtNombrePlanilla.TabIndex = 2;
+            this.planillaBindingSource.DataMember = "Planilla";
+            this.planillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
             // 
-            // LblMesPlanilla
+            // planillaTableAdapter
             // 
-            this.LblMesPlanilla.AutoSize = true;
-            this.LblMesPlanilla.Location = new System.Drawing.Point(30, 106);
-            this.LblMesPlanilla.Name = "LblMesPlanilla";
-            this.LblMesPlanilla.Size = new System.Drawing.Size(87, 17);
-            this.LblMesPlanilla.TabIndex = 1;
-            this.LblMesPlanilla.Text = "Fecha (Mes)";
+            this.planillaTableAdapter.ClearBeforeFill = true;
             // 
-            // LblNombrePlanilla
+            // idDataGridViewTextBoxColumn
             // 
-            this.LblNombrePlanilla.AutoSize = true;
-            this.LblNombrePlanilla.Location = new System.Drawing.Point(30, 59);
-            this.LblNombrePlanilla.Name = "LblNombrePlanilla";
-            this.LblNombrePlanilla.Size = new System.Drawing.Size(58, 17);
-            this.LblNombrePlanilla.TabIndex = 0;
-            this.LblNombrePlanilla.Text = "Nombre";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "idUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            this.idUsuarioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Actualizar
+            // 
+            this.Actualizar.HeaderText = "";
+            this.Actualizar.MinimumWidth = 6;
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Actualizar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Actualizar.Width = 125;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 125;
             // 
             // FrmPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 340);
+            this.ClientSize = new System.Drawing.Size(921, 322);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.GbxControles);
-            this.Controls.Add(this.GbxDatosUsuarios);
             this.Name = "FrmPlanilla";
             this.Text = "Pantalla Planilla";
+            this.Load += new System.EventHandler(this.FrmPlanilla_Load);
             this.GbxControles.ResumeLayout(false);
-            this.GbxDatosUsuarios.ResumeLayout(false);
-            this.GbxDatosUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planillaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,13 +168,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GbxControles;
-        private System.Windows.Forms.Button CmdEliminarPlanilla;
-        private System.Windows.Forms.Button CmdActualizarPlanilla;
         private System.Windows.Forms.Button CmdCrearPlanilla;
-        private System.Windows.Forms.GroupBox GbxDatosUsuarios;
-        private System.Windows.Forms.TextBox TxtMesPlanilla;
-        private System.Windows.Forms.TextBox TxtNombrePlanilla;
-        private System.Windows.Forms.Label LblMesPlanilla;
-        private System.Windows.Forms.Label LblNombrePlanilla;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private ProyectoPlanillaDataSet proyectoPlanillaDataSet;
+        private System.Windows.Forms.BindingSource planillaBindingSource;
+        private ProyectoPlanillaDataSetTableAdapters.PlanillaTableAdapter planillaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Actualizar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

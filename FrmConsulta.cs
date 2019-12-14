@@ -23,5 +23,11 @@ namespace ProyectoPlanilla
             this.empleadoTableAdapter.Fill(this.proyectoPlanillaDataSet.Empleado);
 
         }
+
+        private void CmdImprimirConsulta_Click(object sender, EventArgs e)
+        {
+            FrmDetaPlanilla Nuevo = new FrmDetaPlanilla();
+            Nuevo.Show();
+        }
     }
 }

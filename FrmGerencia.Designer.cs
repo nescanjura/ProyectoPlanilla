@@ -28,50 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GbxControles = new System.Windows.Forms.GroupBox();
-            this.CmdEliminarGerencia = new System.Windows.Forms.Button();
-            this.CmdActualizarGerencia = new System.Windows.Forms.Button();
             this.CmdCrearGerencia = new System.Windows.Forms.Button();
-            this.GbxDatosUsuarios = new System.Windows.Forms.GroupBox();
-            this.TxtLogin = new System.Windows.Forms.TextBox();
-            this.LblNombreGerencia = new System.Windows.Forms.Label();
-            this.LblPorcentajeBono = new System.Windows.Forms.Label();
-            this.TxtClave = new System.Windows.Forms.TextBox();
-            this.ChbBono = new System.Windows.Forms.CheckBox();
-            this.CbxHorasExtras = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gerenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.gerenciaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.GerenciaTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.derechoBonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horasExtrasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcentajeBonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.GbxControles.SuspendLayout();
-            this.GbxDatosUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gerenciaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // GbxControles
             // 
-            this.GbxControles.Controls.Add(this.CmdEliminarGerencia);
-            this.GbxControles.Controls.Add(this.CmdActualizarGerencia);
             this.GbxControles.Controls.Add(this.CmdCrearGerencia);
-            this.GbxControles.Location = new System.Drawing.Point(63, 292);
+            this.GbxControles.Location = new System.Drawing.Point(521, 282);
             this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(423, 85);
+            this.GbxControles.Size = new System.Drawing.Size(142, 75);
             this.GbxControles.TabIndex = 3;
             this.GbxControles.TabStop = false;
             this.GbxControles.Text = "Controles";
-            // 
-            // CmdEliminarGerencia
-            // 
-            this.CmdEliminarGerencia.Location = new System.Drawing.Point(324, 32);
-            this.CmdEliminarGerencia.Name = "CmdEliminarGerencia";
-            this.CmdEliminarGerencia.Size = new System.Drawing.Size(75, 32);
-            this.CmdEliminarGerencia.TabIndex = 0;
-            this.CmdEliminarGerencia.Text = "Eliminar";
-            this.CmdEliminarGerencia.UseVisualStyleBackColor = true;
-            // 
-            // CmdActualizarGerencia
-            // 
-            this.CmdActualizarGerencia.Location = new System.Drawing.Point(160, 32);
-            this.CmdActualizarGerencia.Name = "CmdActualizarGerencia";
-            this.CmdActualizarGerencia.Size = new System.Drawing.Size(125, 32);
-            this.CmdActualizarGerencia.TabIndex = 0;
-            this.CmdActualizarGerencia.Text = "Actualizar";
-            this.CmdActualizarGerencia.UseVisualStyleBackColor = true;
             // 
             // CmdCrearGerencia
             // 
@@ -82,86 +68,117 @@
             this.CmdCrearGerencia.Text = "Crear";
             this.CmdCrearGerencia.UseVisualStyleBackColor = true;
             // 
-            // GbxDatosUsuarios
+            // dataGridView1
             // 
-            this.GbxDatosUsuarios.Controls.Add(this.CbxHorasExtras);
-            this.GbxDatosUsuarios.Controls.Add(this.ChbBono);
-            this.GbxDatosUsuarios.Controls.Add(this.TxtClave);
-            this.GbxDatosUsuarios.Controls.Add(this.TxtLogin);
-            this.GbxDatosUsuarios.Controls.Add(this.LblPorcentajeBono);
-            this.GbxDatosUsuarios.Controls.Add(this.LblNombreGerencia);
-            this.GbxDatosUsuarios.Location = new System.Drawing.Point(47, 41);
-            this.GbxDatosUsuarios.Name = "GbxDatosUsuarios";
-            this.GbxDatosUsuarios.Size = new System.Drawing.Size(439, 207);
-            this.GbxDatosUsuarios.TabIndex = 2;
-            this.GbxDatosUsuarios.TabStop = false;
-            this.GbxDatosUsuarios.Text = "Datos";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.derechoBonoDataGridViewTextBoxColumn,
+            this.horasExtrasDataGridViewTextBoxColumn,
+            this.porcentajeBonoDataGridViewTextBoxColumn,
+            this.idUsuarioDataGridViewTextBoxColumn,
+            this.Actualizar,
+            this.Eliminar});
+            this.dataGridView1.DataSource = this.gerenciaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 43);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1064, 213);
+            this.dataGridView1.TabIndex = 4;
             // 
-            // TxtLogin
+            // gerenciaBindingSource
             // 
-            this.TxtLogin.Location = new System.Drawing.Point(136, 54);
-            this.TxtLogin.Name = "TxtLogin";
-            this.TxtLogin.Size = new System.Drawing.Size(263, 22);
-            this.TxtLogin.TabIndex = 2;
+            this.gerenciaBindingSource.DataMember = "Gerencia";
+            this.gerenciaBindingSource.DataSource = this.proyectoPlanillaDataSet;
             // 
-            // LblNombreGerencia
+            // proyectoPlanillaDataSet
             // 
-            this.LblNombreGerencia.AutoSize = true;
-            this.LblNombreGerencia.Location = new System.Drawing.Point(30, 59);
-            this.LblNombreGerencia.Name = "LblNombreGerencia";
-            this.LblNombreGerencia.Size = new System.Drawing.Size(58, 17);
-            this.LblNombreGerencia.TabIndex = 0;
-            this.LblNombreGerencia.Text = "Nombre";
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // LblPorcentajeBono
+            // gerenciaTableAdapter
             // 
-            this.LblPorcentajeBono.AutoSize = true;
-            this.LblPorcentajeBono.Location = new System.Drawing.Point(30, 106);
-            this.LblPorcentajeBono.Name = "LblPorcentajeBono";
-            this.LblPorcentajeBono.Size = new System.Drawing.Size(57, 17);
-            this.LblPorcentajeBono.TabIndex = 1;
-            this.LblPorcentajeBono.Text = "% Bono";
+            this.gerenciaTableAdapter.ClearBeforeFill = true;
             // 
-            // TxtClave
+            // idDataGridViewTextBoxColumn
             // 
-            this.TxtClave.Location = new System.Drawing.Point(136, 101);
-            this.TxtClave.Name = "TxtClave";
-            this.TxtClave.PasswordChar = '*';
-            this.TxtClave.Size = new System.Drawing.Size(108, 22);
-            this.TxtClave.TabIndex = 2;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
-            // ChbBono
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.ChbBono.AutoSize = true;
-            this.ChbBono.Location = new System.Drawing.Point(33, 160);
-            this.ChbBono.Name = "ChbBono";
-            this.ChbBono.Size = new System.Drawing.Size(105, 21);
-            this.ChbBono.TabIndex = 3;
-            this.ChbBono.Text = "Aplica Bono";
-            this.ChbBono.UseVisualStyleBackColor = true;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 125;
             // 
-            // CbxHorasExtras
+            // derechoBonoDataGridViewTextBoxColumn
             // 
-            this.CbxHorasExtras.AutoSize = true;
-            this.CbxHorasExtras.Location = new System.Drawing.Point(246, 160);
-            this.CbxHorasExtras.Name = "CbxHorasExtras";
-            this.CbxHorasExtras.Size = new System.Drawing.Size(153, 21);
-            this.CbxHorasExtras.TabIndex = 3;
-            this.CbxHorasExtras.Text = "Aplica Horas Extras";
-            this.CbxHorasExtras.UseVisualStyleBackColor = true;
+            this.derechoBonoDataGridViewTextBoxColumn.DataPropertyName = "derechoBono";
+            this.derechoBonoDataGridViewTextBoxColumn.HeaderText = "derechoBono";
+            this.derechoBonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.derechoBonoDataGridViewTextBoxColumn.Name = "derechoBonoDataGridViewTextBoxColumn";
+            this.derechoBonoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // horasExtrasDataGridViewTextBoxColumn
+            // 
+            this.horasExtrasDataGridViewTextBoxColumn.DataPropertyName = "horasExtras";
+            this.horasExtrasDataGridViewTextBoxColumn.HeaderText = "horasExtras";
+            this.horasExtrasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.horasExtrasDataGridViewTextBoxColumn.Name = "horasExtrasDataGridViewTextBoxColumn";
+            this.horasExtrasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // porcentajeBonoDataGridViewTextBoxColumn
+            // 
+            this.porcentajeBonoDataGridViewTextBoxColumn.DataPropertyName = "porcentajeBono";
+            this.porcentajeBonoDataGridViewTextBoxColumn.HeaderText = "porcentajeBono";
+            this.porcentajeBonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.porcentajeBonoDataGridViewTextBoxColumn.Name = "porcentajeBonoDataGridViewTextBoxColumn";
+            this.porcentajeBonoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            this.idUsuarioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Actualizar
+            // 
+            this.Actualizar.HeaderText = "";
+            this.Actualizar.MinimumWidth = 6;
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.Width = 125;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Width = 125;
             // 
             // FrmGerencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 396);
+            this.ClientSize = new System.Drawing.Size(1125, 388);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.GbxControles);
-            this.Controls.Add(this.GbxDatosUsuarios);
             this.Name = "FrmGerencia";
             this.Text = "Pantalla Gerencia";
+            this.Load += new System.EventHandler(this.FrmGerencia_Load);
             this.GbxControles.ResumeLayout(false);
-            this.GbxDatosUsuarios.ResumeLayout(false);
-            this.GbxDatosUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gerenciaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,15 +186,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GbxControles;
-        private System.Windows.Forms.Button CmdEliminarGerencia;
-        private System.Windows.Forms.Button CmdActualizarGerencia;
         private System.Windows.Forms.Button CmdCrearGerencia;
-        private System.Windows.Forms.GroupBox GbxDatosUsuarios;
-        private System.Windows.Forms.TextBox TxtLogin;
-        private System.Windows.Forms.Label LblNombreGerencia;
-        private System.Windows.Forms.CheckBox CbxHorasExtras;
-        private System.Windows.Forms.CheckBox ChbBono;
-        private System.Windows.Forms.TextBox TxtClave;
-        private System.Windows.Forms.Label LblPorcentajeBono;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private ProyectoPlanillaDataSet proyectoPlanillaDataSet;
+        private System.Windows.Forms.BindingSource gerenciaBindingSource;
+        private ProyectoPlanillaDataSetTableAdapters.GerenciaTableAdapter gerenciaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn derechoBonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horasExtrasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcentajeBonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Actualizar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

@@ -16,5 +16,12 @@ namespace ProyectoPlanilla
         {
             InitializeComponent();
         }
+
+        private void FrmGerencia_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'proyectoPlanillaDataSet.Gerencia' Puede moverla o quitarla según sea necesario.
+            this.gerenciaTableAdapter.Fill(this.proyectoPlanillaDataSet.Gerencia);
+
+        }
     }
 }

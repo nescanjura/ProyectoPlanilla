@@ -32,19 +32,19 @@
             this.GbxControles = new System.Windows.Forms.GroupBox();
             this.CmdImprimirConsulta = new System.Windows.Forms.Button();
             this.GbxDatosUsuarios = new System.Windows.Forms.GroupBox();
+            this.CmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.DtpConsultaFin = new System.Windows.Forms.DateTimePicker();
+            this.DtpConsultaInicio = new System.Windows.Forms.DateTimePicker();
+            this.LblEmpleado = new System.Windows.Forms.Label();
             this.LblFecFin = new System.Windows.Forms.Label();
             this.LblFecInicio = new System.Windows.Forms.Label();
-            this.DtpConsultaInicio = new System.Windows.Forms.DateTimePicker();
-            this.DtpConsultaFin = new System.Windows.Forms.DateTimePicker();
-            this.LblEmpleado = new System.Windows.Forms.Label();
-            this.CmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
-            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadoTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.EmpleadoTableAdapter();
             this.GbxControles.SuspendLayout();
             this.GbxDatosUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // GbxControles
@@ -65,6 +65,7 @@
             this.CmdImprimirConsulta.TabIndex = 0;
             this.CmdImprimirConsulta.Text = "Consultar";
             this.CmdImprimirConsulta.UseVisualStyleBackColor = true;
+            this.CmdImprimirConsulta.Click += new System.EventHandler(this.CmdImprimirConsulta_Click);
             // 
             // GbxDatosUsuarios
             // 
@@ -80,6 +81,48 @@
             this.GbxDatosUsuarios.TabIndex = 2;
             this.GbxDatosUsuarios.TabStop = false;
             this.GbxDatosUsuarios.Text = "Datos";
+            // 
+            // CmbEmpleado
+            // 
+            this.CmbEmpleado.DataSource = this.empleadoBindingSource;
+            this.CmbEmpleado.FormattingEnabled = true;
+            this.CmbEmpleado.Location = new System.Drawing.Point(131, 156);
+            this.CmbEmpleado.Name = "CmbEmpleado";
+            this.CmbEmpleado.Size = new System.Drawing.Size(254, 24);
+            this.CmbEmpleado.TabIndex = 4;
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataMember = "Empleado";
+            this.empleadoBindingSource.DataSource = this.proyectoPlanillaDataSet;
+            // 
+            // proyectoPlanillaDataSet
+            // 
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DtpConsultaFin
+            // 
+            this.DtpConsultaFin.Location = new System.Drawing.Point(131, 113);
+            this.DtpConsultaFin.Name = "DtpConsultaFin";
+            this.DtpConsultaFin.Size = new System.Drawing.Size(254, 22);
+            this.DtpConsultaFin.TabIndex = 3;
+            // 
+            // DtpConsultaInicio
+            // 
+            this.DtpConsultaInicio.Location = new System.Drawing.Point(131, 59);
+            this.DtpConsultaInicio.Name = "DtpConsultaInicio";
+            this.DtpConsultaInicio.Size = new System.Drawing.Size(254, 22);
+            this.DtpConsultaInicio.TabIndex = 2;
+            // 
+            // LblEmpleado
+            // 
+            this.LblEmpleado.AutoSize = true;
+            this.LblEmpleado.Location = new System.Drawing.Point(30, 165);
+            this.LblEmpleado.Name = "LblEmpleado";
+            this.LblEmpleado.Size = new System.Drawing.Size(71, 17);
+            this.LblEmpleado.TabIndex = 1;
+            this.LblEmpleado.Text = "Empleado";
             // 
             // LblFecFin
             // 
@@ -99,48 +142,6 @@
             this.LblFecInicio.TabIndex = 0;
             this.LblFecInicio.Text = "Fecha Inicio";
             // 
-            // DtpConsultaInicio
-            // 
-            this.DtpConsultaInicio.Location = new System.Drawing.Point(131, 59);
-            this.DtpConsultaInicio.Name = "DtpConsultaInicio";
-            this.DtpConsultaInicio.Size = new System.Drawing.Size(254, 22);
-            this.DtpConsultaInicio.TabIndex = 2;
-            // 
-            // DtpConsultaFin
-            // 
-            this.DtpConsultaFin.Location = new System.Drawing.Point(131, 113);
-            this.DtpConsultaFin.Name = "DtpConsultaFin";
-            this.DtpConsultaFin.Size = new System.Drawing.Size(254, 22);
-            this.DtpConsultaFin.TabIndex = 3;
-            // 
-            // LblEmpleado
-            // 
-            this.LblEmpleado.AutoSize = true;
-            this.LblEmpleado.Location = new System.Drawing.Point(30, 165);
-            this.LblEmpleado.Name = "LblEmpleado";
-            this.LblEmpleado.Size = new System.Drawing.Size(71, 17);
-            this.LblEmpleado.TabIndex = 1;
-            this.LblEmpleado.Text = "Empleado";
-            // 
-            // CmbEmpleado
-            // 
-            this.CmbEmpleado.DataSource = this.empleadoBindingSource;
-            this.CmbEmpleado.FormattingEnabled = true;
-            this.CmbEmpleado.Location = new System.Drawing.Point(131, 156);
-            this.CmbEmpleado.Name = "CmbEmpleado";
-            this.CmbEmpleado.Size = new System.Drawing.Size(254, 24);
-            this.CmbEmpleado.TabIndex = 4;
-            // 
-            // proyectoPlanillaDataSet
-            // 
-            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
-            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadoBindingSource
-            // 
-            this.empleadoBindingSource.DataMember = "Empleado";
-            this.empleadoBindingSource.DataSource = this.proyectoPlanillaDataSet;
-            // 
             // empleadoTableAdapter
             // 
             this.empleadoTableAdapter.ClearBeforeFill = true;
@@ -158,8 +159,8 @@
             this.GbxControles.ResumeLayout(false);
             this.GbxDatosUsuarios.ResumeLayout(false);
             this.GbxDatosUsuarios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
