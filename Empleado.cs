@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,14 +69,45 @@ namespace ProyectoPlanilla
                 { "nombre", this.nombre },
                 { "apellido", this.apellido },
                 { "fechaNacimiento", this.fechaNacimiento.ToString("dd/MM/yyyy") },
+                { "email", this.email },
                 { "direccion", this.direccion },
                 { "telefono", this.telefono },
                 { "sueldoBase", this.sueldoBase },
             };
 
-            Ejecutor.Insertar(TABLA, parametros);
+            return Ejecutor.Insertar(TABLA, parametros);
+        }
 
-            return 0;
+        public List<Empleado> ObtenerTodo()
+        {
+            List<Empleado> resultado = new List<Empleado>();
+            JArray elementos = null;
+            string campos = "*";
+            try
+            {
+                string str = Ejecutor.Consultar(TABLA, campos);
+                elementos = JArray.Parse(str);
+
+                foreach (JObject el in elementos)
+                {
+                    resultado.Add(new Empleado()
+                    {
+                        Nombre = el["nombre"].ToString(),
+                        Apellido = el["apellido"].ToString(),
+                        FechaNacimiento = Convert.ToDateTime(el["fechaNacimiento"].ToString()),
+                        Email = el["email"].ToString(),
+                        Direccion = el["direccion"].ToString(),
+                        Telefono = el["telefono"].ToString(),
+                        sueldoBase = Convert.ToDouble(el["sueldoBase"].ToString())
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return resultado;
         }
 
     }

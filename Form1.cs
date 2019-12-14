@@ -24,28 +24,17 @@ namespace ProyectoPlanilla
         {
             Empleado emp = new Empleado()
             {
-                Nombre = "Marcela",
-                Apellido = "Orellana",
-                Direccion = "La Libertad",
-                Email = "marcela@hotmail.com",
-                FechaNacimiento = new DateTime(1994, 02, 12),
-                SueldoBase = 750,
-                Telefono = "7232-1209",
-                Sexo = "Mujer"
+                Nombre = "Oscar",
+                Apellido = "Peña",
+                Direccion = "San Salvador",
+                Email = "oscar01@gmail.com",
+                FechaNacimiento = new DateTime(1997, 12, 02),
+                SueldoBase = 520,
+                Telefono = "7121-0020",
+                Sexo = "Hombre"
             };
-            emp.Agregar();
-
-            //Conexion conexion = Conexion.ObtenerInstancia();
-            //Debug.WriteLine(Conexion.Consultar("nombre", "usuario"));
-            //var x = Conexion.Insertar("usuario", "login, clave, nombre", "'nestor2','cualquiera2', 'nestor2'");
-            //Debug.WriteLine(x);
-            //Gerencia ger = new Gerencia();
-            //var cadena = ConfigurationManager.ConnectionStrings["conexionPlanilla"].ConnectionString;
-            //Debug.WriteLine("Cadenas de conexion: ");
-            //Debug.WriteLine(cadena);
-            //OleDbConnection cnx = new OleDbConnection(cadena);
-            //cnx.Open();
-            //Debug.WriteLine(cnx);
+            //emp.Agregar();
+            //emp.ObtenerTodo();
         }
     }
 }
