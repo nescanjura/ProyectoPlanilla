@@ -8,6 +8,13 @@ namespace ProyectoPlanilla
 {
     class Persona
     {
+        protected int id;
+
+        public int Id
+        {
+            get { return id; }
+        }
+
         protected string nombre;
 
         public string Nombre
@@ -24,7 +31,7 @@ namespace ProyectoPlanilla
             set { apellido = value; }
         }
 
-        private string sexo;
+        protected string sexo;
 
         public string Sexo
         {

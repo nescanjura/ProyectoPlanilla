@@ -16,6 +16,8 @@ namespace ProyectoPlanilla
         // Definir los tipos de datos en C# y su equivalencia en tipo OleDbType
         private static OleDbType ConvertirTipo(object obj)
         {
+            if (obj == null || obj.ToString().Length == 0) return OleDbType.Variant;
+
             var map = new Dictionary<Func<object, bool>, OleDbType>()
             {
                 { d => d.GetType() == typeof(Int16), OleDbType.Binary },
@@ -31,6 +33,18 @@ namespace ProyectoPlanilla
             OleDbType value = map[key];
 
             return value;
+        }
+
+        private static int ObtenerLongitud(object obj)
+        {
+            int result = 1;
+
+            if (obj != null)
+            {
+                int len = obj.ToString().Length;
+                result = (len > 0) ? len : 1;
+            }
+            return result;
         }
 
         /// <summary>
@@ -52,7 +66,7 @@ namespace ProyectoPlanilla
             foreach (string key in parametros.Keys) // Recorrer los parámetros y asignar datos a variables
             {
                 valor = parametros[key]; // Asignar el valor del parámetro
-                dbParams[i] = new OleDbParameter($"{key}", Ejecutor.ConvertirTipo(valor), valor.ToString().Length); // Crear el parámetro para SQL
+                dbParams[i] = new OleDbParameter($"{key}", Ejecutor.ConvertirTipo(valor), Ejecutor.ObtenerLongitud(valor)); // Crear el parámetro para SQL
                 campos += $"{key}"; // El nombre del campo
                 valores += "?"; // Se agrega uno por cada parámetro
                 i++;
@@ -72,7 +86,7 @@ namespace ProyectoPlanilla
                     cmd.Parameters.AddRange(dbParams); // Agregar los parámetros al comando
                     
                     foreach (var p in parametros) // Agregar los valores de los parámetros
-                        cmd.Parameters[p.Key].Value = p.Value;
+                        cmd.Parameters[p.Key].Value = p.Value ?? DBNull.Value;
 
                     cmd.Prepare(); // Preparar la instrucción sql
                     cmd.ExecuteNonQuery(); // Ejecutar el SQL
@@ -85,7 +99,51 @@ namespace ProyectoPlanilla
                 }
             }
 
-            return idRegistro; // Devolver ID del registro insertado (Hace falta)
+            return idRegistro; // Devolver ID del registro insertado
+        }
+
+        public static bool Actualizar(string tabla, Dictionary<string, object> parametros, string condiciones)
+        {
+            bool resultado = false;
+            object valor = ""; // El valor del parámetro al recorrer el diccionario
+            string valoresParams = ""; // Variable para asignar el nombre del campo y su parámetro
+            Conexion conex = Conexion.ObtenerInstancia(); // Obtener la instancia de la clase Conexión
+            OleDbConnection cnx = conex.ObtenerConexion(); // Obtener la conexión a la BD
+            OleDbParameter[] dbParams = new OleDbParameter[parametros.Count]; // Crear el arreglo para los parámetros
+
+            int i = 0;
+            foreach (string key in parametros.Keys)
+            {
+                valor = parametros[key]; // Asignar el valor del parámetro
+                dbParams[i] = new OleDbParameter($"{key}", Ejecutor.ConvertirTipo(valor), Ejecutor.ObtenerLongitud(valor)); // Crear el parámetro para SQL
+                valoresParams += $"{key} = ?"; // El nombre del campo con su parámetro
+                i++;
+                if (i < parametros.Count)
+                    valoresParams += ",";
+            }
+
+            cnx.Open(); // Abrir la conexión
+
+            using (OleDbCommand cmd = cnx.CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = $"UPDATE {tabla} SET {valoresParams} WHERE {condiciones}"; // Consulta SQL
+                    cmd.Parameters.AddRange(dbParams); // Agregar los parámetros al comando
+
+                    foreach (var p in parametros) // Agregar los valores de los parámetros
+                        cmd.Parameters[p.Key].Value = p.Value ?? DBNull.Value;
+
+                    cmd.Prepare(); // Preparar la instrucción sql
+                    cmd.ExecuteNonQuery(); // Ejecutar el SQL
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error: {ex.Message}"); // Mostrar mensaje de error en caso que haya
+                }
+
+                return resultado;
+            }
         }
 
         /// <summary>

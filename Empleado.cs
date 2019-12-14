@@ -10,8 +10,11 @@ namespace ProyectoPlanilla
 {
     class Empleado : Persona
     {
-        private const string TABLA = "Empleado";
+        const string TABLA = "Empleado";
         Dictionary<string, object> parametros;
+        JArray elementos = null;
+        string campos = "*";
+        string condiciones = "";
 
 
         private DateTime fechaNacimiento;
@@ -61,6 +64,27 @@ namespace ProyectoPlanilla
             set { sueldoBase = value; }
         }
 
+        public Empleado Obtener(int id)
+        {
+            condiciones = $"ID = {id}";
+            string str = Ejecutor.Consultar(TABLA, campos, condiciones);
+            elementos = JArray.Parse(str);
+
+            var first = elementos.First;
+
+            return new Empleado()
+            {
+                id = (int)first["Id"],
+                Nombre = first["nombre"].ToString(),
+                Apellido = first["apellido"].ToString(),
+                FechaNacimiento = Convert.ToDateTime(first["fechaNacimiento"].ToString()),
+                Email = first["email"].ToString(),
+                Direccion = first["direccion"].ToString(),
+                Telefono = first["telefono"].ToString(),
+                sueldoBase = Convert.ToDouble(first["sueldoBase"].ToString()),
+                //Estado = (bool)first["estado"]
+            };
+        }
 
         public int Agregar()
         {
@@ -69,6 +93,7 @@ namespace ProyectoPlanilla
                 { "nombre", this.nombre },
                 { "apellido", this.apellido },
                 { "fechaNacimiento", this.fechaNacimiento.ToString("dd/MM/yyyy") },
+                { "sexo", this.sexo },
                 { "email", this.email },
                 { "direccion", this.direccion },
                 { "telefono", this.telefono },
@@ -78,11 +103,29 @@ namespace ProyectoPlanilla
             return Ejecutor.Insertar(TABLA, parametros);
         }
 
+        public bool Actualizar()
+        {
+            if (id == null) return false;
+
+            condiciones = $"id = {this.id}";
+            parametros = new Dictionary<string, object>()
+            {
+                { "nombre", this.nombre },
+                { "apellido", this.apellido },
+                { "fechaNacimiento", this.fechaNacimiento.ToString("dd/MM/yyyy") },
+                { "sexo", this.sexo },
+                { "email", this.email },
+                { "direccion", this.direccion },
+                { "telefono", this.telefono },
+                { "sueldoBase", this.sueldoBase },
+            };
+
+            return Ejecutor.Actualizar(TABLA, parametros, condiciones);
+        }
+
         public List<Empleado> ObtenerTodo()
         {
             List<Empleado> resultado = new List<Empleado>();
-            JArray elementos = null;
-            string campos = "*";
             try
             {
                 string str = Ejecutor.Consultar(TABLA, campos);
