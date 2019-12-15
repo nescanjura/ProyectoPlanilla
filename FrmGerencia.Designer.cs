@@ -140,7 +140,7 @@
             this.CmdCrearGerencia.Name = "CmdCrearGerencia";
             this.CmdCrearGerencia.Size = new System.Drawing.Size(180, 32);
             this.CmdCrearGerencia.TabIndex = 0;
-            this.CmdCrearGerencia.Text = "Crear Gerencia";
+            this.CmdCrearGerencia.Text = "Crear Nueva Gerencia";
             this.CmdCrearGerencia.UseVisualStyleBackColor = true;
             this.CmdCrearGerencia.Click += new System.EventHandler(this.CmdCrearGerencia_Click);
             // 
@@ -152,7 +152,7 @@
             this.Controls.Add(this.CmdCrearGerencia);
             this.Controls.Add(this.DgvGerencia);
             this.Name = "FrmGerencia";
-            this.Text = "Pantalla Gerencia";
+            this.Text = "Pantalla Nueva Gerencia";
             this.Load += new System.EventHandler(this.FrmGerencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvGerencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerenciaBindingSource)).EndInit();

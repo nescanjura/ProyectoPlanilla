@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.GbxControles = new System.Windows.Forms.GroupBox();
             this.CmdCrearEmpleado = new System.Windows.Forms.Button();
             this.DgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
-            this.empleadoTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.EmpleadoTableAdapter();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idGerenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,30 +45,22 @@
             this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.empleadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.GbxControles.SuspendLayout();
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadoTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.EmpleadoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // GbxControles
-            // 
-            this.GbxControles.Controls.Add(this.CmdCrearEmpleado);
-            this.GbxControles.Location = new System.Drawing.Point(496, 369);
-            this.GbxControles.Name = "GbxControles";
-            this.GbxControles.Size = new System.Drawing.Size(151, 79);
-            this.GbxControles.TabIndex = 3;
-            this.GbxControles.TabStop = false;
-            this.GbxControles.Text = "Controles";
             // 
             // CmdCrearEmpleado
             // 
-            this.CmdCrearEmpleado.Location = new System.Drawing.Point(33, 32);
+            this.CmdCrearEmpleado.Location = new System.Drawing.Point(873, 342);
             this.CmdCrearEmpleado.Name = "CmdCrearEmpleado";
-            this.CmdCrearEmpleado.Size = new System.Drawing.Size(81, 32);
+            this.CmdCrearEmpleado.Size = new System.Drawing.Size(196, 32);
             this.CmdCrearEmpleado.TabIndex = 0;
-            this.CmdCrearEmpleado.Text = "Crear";
+            this.CmdCrearEmpleado.Text = "Crear Nuevo Empleado";
             this.CmdCrearEmpleado.UseVisualStyleBackColor = true;
             this.CmdCrearEmpleado.Click += new System.EventHandler(this.CmdCrearEmpleado_Click);
             // 
@@ -101,20 +89,6 @@
             this.DgvEmpleado.RowTemplate.Height = 24;
             this.DgvEmpleado.Size = new System.Drawing.Size(1048, 290);
             this.DgvEmpleado.TabIndex = 4;
-            // 
-            // empleadoBindingSource
-            // 
-            this.empleadoBindingSource.DataMember = "Empleado";
-            this.empleadoBindingSource.DataSource = this.proyectoPlanillaDataSet;
-            // 
-            // proyectoPlanillaDataSet
-            // 
-            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
-            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empleadoTableAdapter
-            // 
-            this.empleadoTableAdapter.ClearBeforeFill = true;
             // 
             // idUsuarioDataGridViewTextBoxColumn
             // 
@@ -223,27 +197,39 @@
             this.empleadoBindingSource1.DataMember = "Empleado";
             this.empleadoBindingSource1.DataSource = this.proyectoPlanillaDataSet;
             // 
+            // proyectoPlanillaDataSet
+            // 
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataMember = "Empleado";
+            this.empleadoBindingSource.DataSource = this.proyectoPlanillaDataSet;
+            // 
+            // empleadoTableAdapter
+            // 
+            this.empleadoTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 457);
+            this.ClientSize = new System.Drawing.Size(1117, 398);
+            this.Controls.Add(this.CmdCrearEmpleado);
             this.Controls.Add(this.DgvEmpleado);
-            this.Controls.Add(this.GbxControles);
             this.Name = "FrmEmpleado";
             this.Text = "FrmEmpleado";
             this.Load += new System.EventHandler(this.FrmEmpleado_Load);
-            this.GbxControles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmpleado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox GbxControles;
         private System.Windows.Forms.Button CmdCrearEmpleado;
         private System.Windows.Forms.DataGridView DgvEmpleado;
         private ProyectoPlanillaDataSet proyectoPlanillaDataSet;

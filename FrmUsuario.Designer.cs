@@ -78,7 +78,7 @@
             this.CmdCrearUsuario.Name = "CmdCrearUsuario";
             this.CmdCrearUsuario.Size = new System.Drawing.Size(161, 32);
             this.CmdCrearUsuario.TabIndex = 0;
-            this.CmdCrearUsuario.Text = "Crear Usuario";
+            this.CmdCrearUsuario.Text = "Crear Nuevo Usuario";
             this.CmdCrearUsuario.UseVisualStyleBackColor = true;
             this.CmdCrearUsuario.Click += new System.EventHandler(this.CmdCrearUsuario_Click);
             // 

@@ -51,7 +51,7 @@
             this.CmdCrearPlanilla.Name = "CmdCrearPlanilla";
             this.CmdCrearPlanilla.Size = new System.Drawing.Size(151, 32);
             this.CmdCrearPlanilla.TabIndex = 0;
-            this.CmdCrearPlanilla.Text = "Crear Planilla";
+            this.CmdCrearPlanilla.Text = "Crear Nueva Planilla";
             this.CmdCrearPlanilla.UseVisualStyleBackColor = true;
             this.CmdCrearPlanilla.Click += new System.EventHandler(this.CmdCrearPlanilla_Click);
             // 
