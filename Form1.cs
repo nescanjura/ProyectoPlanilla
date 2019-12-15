@@ -22,22 +22,7 @@ namespace ProyectoPlanilla
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Empleado emp;
-            //emp = new Empleado()
-            //{
-            //    Nombre = "Oscar",
-            //    Apellido = "Peña",
-            //    Direccion = "San Salvador",
-            //    Email = "oscar01@gmail.com",
-            //    FechaNacimiento = new DateTime(1997, 12, 02),
-            //    SueldoBase = 520,
-            //    Telefono = "7121-0020",
-            //    Sexo = "Hombre"
-            //};
-            emp = new Empleado().Obtener(8);
-            emp.Actualizar();
-            //emp.Agregar();
-            //emp.ObtenerTodo();
+            
         }
     }
 }
