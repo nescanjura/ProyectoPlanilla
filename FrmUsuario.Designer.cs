@@ -83,6 +83,7 @@
             this.CmdCrearUsuario.TabIndex = 0;
             this.CmdCrearUsuario.Text = "Nuevo usuario";
             this.CmdCrearUsuario.UseVisualStyleBackColor = true;
+            this.CmdCrearUsuario.Click += new System.EventHandler(this.CmdCrearUsuario_Click);
             // 
             // DgvUsuario
             // 

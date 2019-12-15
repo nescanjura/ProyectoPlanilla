@@ -32,12 +32,11 @@
             this.mANTENIMIENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gERENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROCESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gENERARPLANILLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pLANILLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hISTORICOPOREMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gERENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hISTORICOPLANILLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +49,7 @@
             this.cONSULTASToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1135, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1513, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,6 +77,13 @@
             this.eMPLEADOToolStripMenuItem.Text = "EMPLEADO";
             this.eMPLEADOToolStripMenuItem.Click += new System.EventHandler(this.eMPLEADOToolStripMenuItem_Click);
             // 
+            // gERENCIAToolStripMenuItem
+            // 
+            this.gERENCIAToolStripMenuItem.Name = "gERENCIAToolStripMenuItem";
+            this.gERENCIAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gERENCIAToolStripMenuItem.Text = "GERENCIA";
+            this.gERENCIAToolStripMenuItem.Click += new System.EventHandler(this.gERENCIAToolStripMenuItem_Click);
+            // 
             // pROCESOToolStripMenuItem
             // 
             this.pROCESOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -96,42 +102,27 @@
             // cONSULTASToolStripMenuItem
             // 
             this.cONSULTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pLANILLAToolStripMenuItem});
+            this.hISTORICOPLANILLAToolStripMenuItem});
             this.cONSULTASToolStripMenuItem.Name = "cONSULTASToolStripMenuItem";
             this.cONSULTASToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.cONSULTASToolStripMenuItem.Text = "CONSULTAS";
             // 
-            // pLANILLAToolStripMenuItem
+            // hISTORICOPLANILLAToolStripMenuItem
             // 
-            this.pLANILLAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hISTORICOPOREMPLEADOToolStripMenuItem});
-            this.pLANILLAToolStripMenuItem.Name = "pLANILLAToolStripMenuItem";
-            this.pLANILLAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.pLANILLAToolStripMenuItem.Text = "PLANILLA";
-            this.pLANILLAToolStripMenuItem.Click += new System.EventHandler(this.pLANILLAToolStripMenuItem_Click);
-            // 
-            // hISTORICOPOREMPLEADOToolStripMenuItem
-            // 
-            this.hISTORICOPOREMPLEADOToolStripMenuItem.Name = "hISTORICOPOREMPLEADOToolStripMenuItem";
-            this.hISTORICOPOREMPLEADOToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
-            this.hISTORICOPOREMPLEADOToolStripMenuItem.Text = "HISTORICO POR EMPLEADO";
-            this.hISTORICOPOREMPLEADOToolStripMenuItem.Click += new System.EventHandler(this.hISTORICOPOREMPLEADOToolStripMenuItem_Click);
-            // 
-            // gERENCIAToolStripMenuItem
-            // 
-            this.gERENCIAToolStripMenuItem.Name = "gERENCIAToolStripMenuItem";
-            this.gERENCIAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.gERENCIAToolStripMenuItem.Text = "GERENCIA";
-            this.gERENCIAToolStripMenuItem.Click += new System.EventHandler(this.gERENCIAToolStripMenuItem_Click);
+            this.hISTORICOPLANILLAToolStripMenuItem.Name = "hISTORICOPLANILLAToolStripMenuItem";
+            this.hISTORICOPLANILLAToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.hISTORICOPLANILLAToolStripMenuItem.Text = "HISTORICO PLANILLA";
+            this.hISTORICOPLANILLAToolStripMenuItem.Click += new System.EventHandler(this.hISTORICOPLANILLAToolStripMenuItem_Click);
             // 
             // FrmPantallaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 607);
+            this.ClientSize = new System.Drawing.Size(1513, 747);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPantallaPrincipal";
             this.Text = "Pantalla Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -151,9 +142,8 @@
         private System.Windows.Forms.ToolStripMenuItem pROCESOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gENERARPLANILLAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cONSULTASToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pLANILLAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hISTORICOPOREMPLEADOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gERENCIAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hISTORICOPLANILLAToolStripMenuItem;
     }
 }
 

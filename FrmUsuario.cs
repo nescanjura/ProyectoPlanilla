@@ -42,7 +42,7 @@ namespace ProyectoPlanilla
 
         private void ClicCelda(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (e.RowIndex < 0 || e.ColumnIndex < 4) return;
 
             var fila = ((DataGridView)sender).Rows[e.RowIndex];
@@ -64,7 +64,13 @@ namespace ProyectoPlanilla
                     this.CargarDatos();
                 }
             }
+        }
 
+
+        private void CmdCrearUsuario_Click(object sender, EventArgs e)
+        {
+            FrmCrearUsuario Nuevo = new FrmCrearUsuario();
+            Nuevo.Show();
         }
     }
 }

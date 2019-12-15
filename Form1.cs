@@ -60,7 +60,8 @@ namespace ProyectoPlanilla
 
         }
 
-        private void hISTORICOPOREMPLEADOToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void hISTORICOPLANILLAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmConsulta Nuevo = new FrmConsulta();
             Nuevo.MdiParent = this;
