@@ -210,6 +210,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -240,6 +241,12 @@
     <Content Include="ProyectoPlanilla.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\check.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\eliminar_rojo.png" />
+    <None Include="Resources\eliminar_naranja.png" />
+    <None Include="Resources\editar_naranja.png" />
+    <None Include="Resources\editar_celeste.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

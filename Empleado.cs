@@ -17,6 +17,15 @@ namespace ProyectoPlanilla
         string campos = "*";
         string condiciones = "";
 
+        #region Propiedades
+        protected string apellido;
+
+        public string Apellido
+        {
+            get { return apellido; }
+            set { apellido = value; }
+        }
+
         private DateTime fechaNacimiento;
 
         public DateTime FechaNacimiento
@@ -39,6 +48,14 @@ namespace ProyectoPlanilla
         {
             get { return telefono; }
             set { telefono = value; }
+        }
+
+        private string sexo;
+
+        public string Sexo
+        {
+            get { return sexo; }
+            set { sexo = value; }
         }
 
         private string email;
@@ -77,7 +94,9 @@ namespace ProyectoPlanilla
         {
             get { return idGerencia; }
         }
+        #endregion
 
+        #region Métodos
         public Empleado Obtener(int id)
         {
             condiciones = $"ID = {id} AND {CONDICION_ESTADO}";
@@ -189,5 +208,6 @@ namespace ProyectoPlanilla
 
             return new Usuario().Obtener(this.idUsuario);
         }
+        #endregion
     }
 }

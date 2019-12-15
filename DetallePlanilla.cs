@@ -36,32 +36,28 @@ namespace ProyectoPlanilla
 
         public double Isss
         {
-            get { return isss; }
-            set { isss = value; }
+            get { return DescuentoIsss(); }
         }
 
         private double afpEmpleado;
 
         public double AfpEmpleado
         {
-            get { return afpEmpleado; }
-            set { afpEmpleado = value; }
+            get { return sueldoBase * 0.725; }
         }
 
         private double afpEmpleador;
 
         public  double AfpEmpleador
         {
-            get { return afpEmpleador; }
-            set { afpEmpleador = value; }
+            get { return sueldoBase * 0.775; }
         }
 
         private double renta;
 
         public double Renta
         {
-            get { return renta; }
-            set { renta = value; }
+            get { return DescuentoRenta(); }
         }
 
         private DateTime fecha;
@@ -82,6 +78,39 @@ namespace ProyectoPlanilla
         #endregion
 
         #region Métodos
+        private double DescuentoIsss()
+        {
+            Dictionary<Func<double, bool>, double> map = new Dictionary<Func<double, bool>, double>()
+            {
+                { d => d <= 685.71, 20.57 },
+                { d => d <= 700, 21 },
+                { d => d <= 750, 22.5 },
+                { d => d <= 800, 24 },
+                { d => d <= 850, 25.5 },
+                { d => d <= 900, 27 },
+                { d => d <= 950, 28.5 },
+                { d => d > 950, 30 }
+            };
+
+            var key = map.Keys.Single(test => test(this.sueldoBase));
+            return map[key];
+        }
+
+        private double DescuentoRenta()
+        {
+            Dictionary<Func<double, bool>, double> map = new Dictionary<Func<double, bool>, double>()
+            {
+                { d => d >= 0.01 && d <= 487.6, 0 },
+                { d => d <= 642.85, sueldoBase * 0.1 + 17.48 },
+                { d => d <= 915.81, sueldoBase * 0.1 + 32.70 },
+                { d => d <= 2058.67, sueldoBase * 0.2 + 60 },
+                { d => d >= 2058.68, sueldoBase * 0.3 + 288.57 }
+            };
+
+            var key = map.Keys.Single(test => test(this.sueldoBase));
+            return map[key];
+        }
+
         public DetallePlanilla Obtener(int id)
         {
             condiciones = $"ID = {id}";
@@ -94,10 +123,10 @@ namespace ProyectoPlanilla
             {
                 id = (int)first["id"],
                 SueldoBase = (double)first["sueldoBase"],
-                Isss = (double)first["isss"],
-                AfpEmpleado = (double)first["afpEmpleado"],
-                AfpEmpleador = (double)first["afpEmpleador"],
-                Renta = (double)first["renta"],
+                isss = (double)first["isss"],
+                afpEmpleado = (double)first["afpEmpleado"],
+                afpEmpleador = (double)first["afpEmpleador"],
+                renta = (double)first["renta"],
                 Fecha = (DateTime)first["fecha"],
                 idEmpleado = (int)first["idEmpleado"]
             };
@@ -150,10 +179,10 @@ namespace ProyectoPlanilla
                     resultado.Add(new DetallePlanilla()
                     {
                         id = (int)el["id"],
-                        Isss = (double)el["isss"],
-                        AfpEmpleado = (double)el["afpEmpleado"],
-                        AfpEmpleador = (double)el["afpEmpleador"],
-                        Renta = (double)el["renta"],
+                        isss = (double)el["isss"],
+                        afpEmpleado = (double)el["afpEmpleado"],
+                        afpEmpleador = (double)el["afpEmpleador"],
+                        renta = (double)el["renta"],
                         fecha = (DateTime)el["renta"],
                     });
                 }
