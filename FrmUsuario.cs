@@ -33,18 +33,12 @@ namespace ProyectoPlanilla
 
         }
 
-        private void loginTextBox_TextChanged(object sender, EventArgs e)
+
+
+        private void CmdCrearUsuario_Click(object sender, EventArgs e)
         {
-                    }
-
-        private void CmdEliminarUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            FrmCrearUsuario Nuevo = new FrmCrearUsuario();
+            Nuevo.Show();
         }
     }
 }

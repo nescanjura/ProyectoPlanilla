@@ -23,5 +23,11 @@ namespace ProyectoPlanilla
             this.empleadoTableAdapter.Fill(this.proyectoPlanillaDataSet.Empleado);
 
         }
+
+        private void CmdCrearEmpleado_Click(object sender, EventArgs e)
+        {
+            FrmCrearEmpleado Nuevo = new FrmCrearEmpleado();
+            Nuevo.Show();
+        }
     }
 }

@@ -30,7 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DgvDetaPlanilla = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detaPlanillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.detaPlanillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter();
+            this.GbxControlesDetaPlanilla = new System.Windows.Forms.GroupBox();
+            this.CmdCrearDetallePlanila = new System.Windows.Forms.Button();
             this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPlanillaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,15 +42,9 @@
             this.isssDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afpEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afpEmpleadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAfpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.detaPlanillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
-            this.detaPlanillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter();
-            this.GbxControlesDetaPlanilla = new System.Windows.Forms.GroupBox();
-            this.CmdCrearDetallePlanila = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetaPlanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaPlanillaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
@@ -58,7 +56,6 @@
             this.DgvDetaPlanilla.AutoGenerateColumns = false;
             this.DgvDetaPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDetaPlanilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.idEmpleadoDataGridViewTextBoxColumn,
             this.idPlanillaDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
@@ -66,7 +63,6 @@
             this.isssDataGridViewTextBoxColumn,
             this.afpEmpleadoDataGridViewTextBoxColumn,
             this.afpEmpleadorDataGridViewTextBoxColumn,
-            this.idAfpDataGridViewTextBoxColumn,
             this.rentaDataGridViewTextBoxColumn,
             this.Actualizar,
             this.Eliminar});
@@ -78,13 +74,38 @@
             this.DgvDetaPlanilla.Size = new System.Drawing.Size(998, 219);
             this.DgvDetaPlanilla.TabIndex = 0;
             // 
-            // idDataGridViewTextBoxColumn
+            // detaPlanillaBindingSource
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            this.detaPlanillaBindingSource.DataMember = "DetaPlanilla";
+            this.detaPlanillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
+            // 
+            // proyectoPlanillaDataSet
+            // 
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // detaPlanillaTableAdapter
+            // 
+            this.detaPlanillaTableAdapter.ClearBeforeFill = true;
+            // 
+            // GbxControlesDetaPlanilla
+            // 
+            this.GbxControlesDetaPlanilla.Controls.Add(this.CmdCrearDetallePlanila);
+            this.GbxControlesDetaPlanilla.Location = new System.Drawing.Point(475, 322);
+            this.GbxControlesDetaPlanilla.Name = "GbxControlesDetaPlanilla";
+            this.GbxControlesDetaPlanilla.Size = new System.Drawing.Size(144, 88);
+            this.GbxControlesDetaPlanilla.TabIndex = 2;
+            this.GbxControlesDetaPlanilla.TabStop = false;
+            this.GbxControlesDetaPlanilla.Text = "Controles";
+            // 
+            // CmdCrearDetallePlanila
+            // 
+            this.CmdCrearDetallePlanila.Location = new System.Drawing.Point(33, 32);
+            this.CmdCrearDetallePlanila.Name = "CmdCrearDetallePlanila";
+            this.CmdCrearDetallePlanila.Size = new System.Drawing.Size(81, 32);
+            this.CmdCrearDetallePlanila.TabIndex = 0;
+            this.CmdCrearDetallePlanila.Text = "Crear";
+            this.CmdCrearDetallePlanila.UseVisualStyleBackColor = true;
             // 
             // idEmpleadoDataGridViewTextBoxColumn
             // 
@@ -142,14 +163,6 @@
             this.afpEmpleadorDataGridViewTextBoxColumn.Name = "afpEmpleadorDataGridViewTextBoxColumn";
             this.afpEmpleadorDataGridViewTextBoxColumn.Width = 125;
             // 
-            // idAfpDataGridViewTextBoxColumn
-            // 
-            this.idAfpDataGridViewTextBoxColumn.DataPropertyName = "idAfp";
-            this.idAfpDataGridViewTextBoxColumn.HeaderText = "idAfp";
-            this.idAfpDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idAfpDataGridViewTextBoxColumn.Name = "idAfpDataGridViewTextBoxColumn";
-            this.idAfpDataGridViewTextBoxColumn.Width = 125;
-            // 
             // rentaDataGridViewTextBoxColumn
             // 
             this.rentaDataGridViewTextBoxColumn.DataPropertyName = "renta";
@@ -175,39 +188,6 @@
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Width = 125;
-            // 
-            // detaPlanillaBindingSource
-            // 
-            this.detaPlanillaBindingSource.DataMember = "DetaPlanilla";
-            this.detaPlanillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
-            // 
-            // proyectoPlanillaDataSet
-            // 
-            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
-            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // detaPlanillaTableAdapter
-            // 
-            this.detaPlanillaTableAdapter.ClearBeforeFill = true;
-            // 
-            // GbxControlesDetaPlanilla
-            // 
-            this.GbxControlesDetaPlanilla.Controls.Add(this.CmdCrearDetallePlanila);
-            this.GbxControlesDetaPlanilla.Location = new System.Drawing.Point(475, 322);
-            this.GbxControlesDetaPlanilla.Name = "GbxControlesDetaPlanilla";
-            this.GbxControlesDetaPlanilla.Size = new System.Drawing.Size(144, 88);
-            this.GbxControlesDetaPlanilla.TabIndex = 2;
-            this.GbxControlesDetaPlanilla.TabStop = false;
-            this.GbxControlesDetaPlanilla.Text = "Controles";
-            // 
-            // CmdCrearDetallePlanila
-            // 
-            this.CmdCrearDetallePlanila.Location = new System.Drawing.Point(33, 32);
-            this.CmdCrearDetallePlanila.Name = "CmdCrearDetallePlanila";
-            this.CmdCrearDetallePlanila.Size = new System.Drawing.Size(81, 32);
-            this.CmdCrearDetallePlanila.TabIndex = 0;
-            this.CmdCrearDetallePlanila.Text = "Crear";
-            this.CmdCrearDetallePlanila.UseVisualStyleBackColor = true;
             // 
             // FrmDetaPlanilla
             // 
@@ -235,7 +215,6 @@
         private ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter detaPlanillaTableAdapter;
         private System.Windows.Forms.GroupBox GbxControlesDetaPlanilla;
         private System.Windows.Forms.Button CmdCrearDetallePlanila;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPlanillaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
@@ -243,7 +222,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn isssDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn afpEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn afpEmpleadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAfpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Actualizar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;

@@ -23,5 +23,11 @@ namespace ProyectoPlanilla
             this.planillaTableAdapter.Fill(this.proyectoPlanillaDataSet.Planilla);
 
         }
+
+        private void CmdCrearPlanilla_Click(object sender, EventArgs e)
+        {
+            FrmCrearPlanilla Nuevo= new FrmCrearPlanilla();
+            Nuevo.Show();
+        }
     }
 }

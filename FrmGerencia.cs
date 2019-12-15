@@ -23,5 +23,11 @@ namespace ProyectoPlanilla
             this.gerenciaTableAdapter.Fill(this.proyectoPlanillaDataSet.Gerencia);
 
         }
+
+        private void CmdCrearGerencia_Click(object sender, EventArgs e)
+        {
+            FrmCrearGerencia Nuevo = new FrmCrearGerencia();
+            Nuevo.Show();
+        }
     }
 }
