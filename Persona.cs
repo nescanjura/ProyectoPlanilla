@@ -8,9 +8,9 @@ namespace ProyectoPlanilla
 {
     class Persona
     {
-        protected int id;
+        protected int? id;
 
-        public int Id
+        public int? Id
         {
             get { return id; }
         }
