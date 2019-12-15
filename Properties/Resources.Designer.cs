@@ -83,6 +83,16 @@ namespace ProyectoPlanilla.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap disable {
+            get {
+                object obj = ResourceManager.GetObject("disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editar_celeste {
             get {
                 object obj = ResourceManager.GetObject("editar_celeste", resourceCulture);
@@ -116,6 +126,16 @@ namespace ProyectoPlanilla.Properties {
         internal static System.Drawing.Bitmap eliminar_rojo {
             get {
                 object obj = ResourceManager.GetObject("eliminar_rojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enable {
+            get {
+                object obj = ResourceManager.GetObject("enable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

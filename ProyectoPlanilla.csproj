@@ -241,6 +241,8 @@
     <Content Include="ProyectoPlanilla.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\enable.png" />
+    <None Include="Resources\disable.png" />
     <None Include="Resources\check.png" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\eliminar_rojo.png" />

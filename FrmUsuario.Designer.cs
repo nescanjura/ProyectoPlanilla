@@ -41,7 +41,6 @@
             this.ColNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColActivo = new System.Windows.Forms.DataGridViewImageColumn();
             this.Actualizar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
@@ -78,7 +77,7 @@
             // CmdCrearUsuario
             // 
             this.CmdCrearUsuario.Location = new System.Drawing.Point(379, 24);
-            this.CmdCrearUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmdCrearUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.CmdCrearUsuario.Name = "CmdCrearUsuario";
             this.CmdCrearUsuario.Size = new System.Drawing.Size(94, 29);
             this.CmdCrearUsuario.TabIndex = 0;
@@ -89,16 +88,16 @@
             // 
             this.DgvUsuario.AllowUserToAddRows = false;
             this.DgvUsuario.AllowUserToDeleteRows = false;
+            this.DgvUsuario.AllowUserToResizeRows = false;
             this.DgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColNumero,
             this.ColNombre,
             this.ColLogin,
-            this.ColActivo,
             this.Actualizar,
             this.Eliminar});
             this.DgvUsuario.Location = new System.Drawing.Point(17, 71);
-            this.DgvUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DgvUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.DgvUsuario.Name = "DgvUsuario";
             this.DgvUsuario.RowHeadersVisible = false;
             this.DgvUsuario.RowHeadersWidth = 51;
@@ -106,7 +105,7 @@
             this.DgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.DgvUsuario.Size = new System.Drawing.Size(456, 162);
             this.DgvUsuario.TabIndex = 2;
-            this.DgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClicCelda);
             // 
             // usuarioBindingSource1
             // 
@@ -157,14 +156,6 @@
             this.ColLogin.Name = "ColLogin";
             this.ColLogin.Width = 125;
             // 
-            // ColActivo
-            // 
-            this.ColActivo.HeaderText = "Activo";
-            this.ColActivo.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColActivo.Name = "ColActivo";
-            this.ColActivo.ReadOnly = true;
-            this.ColActivo.Width = 45;
-            // 
             // Actualizar
             // 
             this.Actualizar.Description = "Editar";
@@ -196,7 +187,7 @@
             this.Controls.Add(this.CmdCrearUsuario);
             this.Controls.Add(this.DgvUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmUsuario";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
@@ -222,7 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLogin;
-        private System.Windows.Forms.DataGridViewImageColumn ColActivo;
         private System.Windows.Forms.DataGridViewImageColumn Actualizar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }

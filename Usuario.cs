@@ -32,14 +32,6 @@ namespace ProyectoPlanilla
             set { clave = value; }
         }
 
-        private Boolean activo;
-
-        public Boolean Activo
-        {
-            get { return activo; }
-            set { activo = value; }
-        }
-
         public Usuario Obtener(int id)
         {
             condiciones = $"ID = {id} AND {CONDICION_ESTADO}";
@@ -53,7 +45,6 @@ namespace ProyectoPlanilla
                 id = (int)first["id"],
                 Nombre = (string)first["nombre"],
                 Login = (string)first["login"],
-                Activo = (bool)first["activo"],
                 Estado = (bool)first["estado"]
             };
         }
@@ -98,7 +89,6 @@ namespace ProyectoPlanilla
                         id = (int)el["id"],
                         Nombre = el["nombre"].ToString(),
                         Login = el["login"].ToString(),
-                        Activo = (bool)el["activo"],
                     });
                 }
             }
@@ -113,6 +103,8 @@ namespace ProyectoPlanilla
         public bool Eliminar(bool quitar = false)
         {
             if (id == null) return false;
+
+            if (this.ObtenerTodo().Count == 1) return false; // Porque no se puede quedar sin ningún usuario
 
             if (quitar)
                 return Ejecutor.Eliminar(TABLA, $"Id = {this.id}"); // Eliminar el registro de la base

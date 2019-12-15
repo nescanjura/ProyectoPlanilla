@@ -27,6 +27,7 @@ namespace ProyectoPlanilla
                 { d => d.GetType() == typeof(DateTime), OleDbType.DBDate },
                 { d => d.GetType() == typeof(Decimal), OleDbType.Decimal },
                 { d => d.GetType() == typeof(String), OleDbType.VarChar },
+                { d => d.GetType() == typeof(Boolean), OleDbType.Boolean },
             };
 
             var key = map.Keys.Single(test => test(obj));
