@@ -17,10 +17,16 @@ namespace ProyectoPlanilla
     {
         Usuario usr = new Usuario();
         List<Usuario> usuarios = new List<Usuario>();
+        FrmCrearUsuario formUsuario;
 
         public FrmUsuario()
         {      
             InitializeComponent();
+        }
+
+        private void FormCerrado(object sender, FormClosedEventArgs e)
+        {
+            this.CargarDatos();
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
@@ -43,16 +49,21 @@ namespace ProyectoPlanilla
         private void ClicCelda(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex < 0 || e.ColumnIndex < 4) return;
+            if (e.RowIndex < 0 || e.ColumnIndex < 3) return;
 
             var fila = ((DataGridView)sender).Rows[e.RowIndex];
             int idRegistro = (int)fila.Tag;
 
             usr = usr.Obtener(idRegistro);
 
+            if (e.ColumnIndex == 3)
+            {
+                InicializarFormRegistro(usr.Id.Value);
+            }
+
             if (e.ColumnIndex == 4)
             {
-                DialogResult result = MessageBox.Show($"¿Desea eliminar la cuenta de usuario {usr.Login}?", "Eliminar", MessageBoxButtons.YesNoCancel);
+                DialogResult result = MessageBox.Show($"¿Desea eliminar la cuenta de usuario {usr.Login}?", "Eliminar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -66,11 +77,19 @@ namespace ProyectoPlanilla
             }
         }
 
-
         private void CmdCrearUsuario_Click(object sender, EventArgs e)
         {
-            FrmCrearUsuario Nuevo = new FrmCrearUsuario();
-            Nuevo.Show();
+            InicializarFormRegistro();
+        }
+
+        private void InicializarFormRegistro(int idUser = 0)
+        {
+            if (idUser > 0)
+                formUsuario = new FrmCrearUsuario(idUser);
+            else
+                formUsuario = new FrmCrearUsuario();
+            formUsuario.FormClosed += new FormClosedEventHandler(this.FormCerrado);
+            formUsuario.Show();
         }
     }
 }

@@ -54,7 +54,8 @@ namespace ProyectoPlanilla
             parametros = new Dictionary<string, object>()
             {
                 { "nombre", this.nombre },
-                { "login", this.login }
+                { "login", this.login },
+                { "clave", this.clave }
             };
 
             return Ejecutor.Insertar(TABLA, parametros);

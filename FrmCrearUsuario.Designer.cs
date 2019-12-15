@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.GbxDatosUsuario = new System.Windows.Forms.GroupBox();
-            this.LblLoginUsuario = new System.Windows.Forms.Label();
-            this.LblClaveUsuario = new System.Windows.Forms.Label();
-            this.ChbActivoUsuario = new System.Windows.Forms.CheckBox();
-            this.ChbEstadoUsuario = new System.Windows.Forms.CheckBox();
-            this.LblNombreUsuairo = new System.Windows.Forms.Label();
-            this.TxtLoginUsuario = new System.Windows.Forms.TextBox();
-            this.TxtClaveUsuario = new System.Windows.Forms.TextBox();
             this.TxtNombreUsuario = new System.Windows.Forms.TextBox();
+            this.TxtClaveUsuario = new System.Windows.Forms.TextBox();
+            this.TxtLoginUsuario = new System.Windows.Forms.TextBox();
+            this.LblNombreUsuairo = new System.Windows.Forms.Label();
+            this.LblClaveUsuario = new System.Windows.Forms.Label();
+            this.LblLoginUsuario = new System.Windows.Forms.Label();
             this.GbxControlesUsuario = new System.Windows.Forms.GroupBox();
             this.CmdLImpiarUsuario = new System.Windows.Forms.Button();
             this.CmdNuevoUsuario = new System.Windows.Forms.Button();
@@ -49,123 +47,117 @@
             this.GbxDatosUsuario.Controls.Add(this.TxtNombreUsuario);
             this.GbxDatosUsuario.Controls.Add(this.TxtClaveUsuario);
             this.GbxDatosUsuario.Controls.Add(this.TxtLoginUsuario);
-            this.GbxDatosUsuario.Controls.Add(this.ChbEstadoUsuario);
-            this.GbxDatosUsuario.Controls.Add(this.ChbActivoUsuario);
             this.GbxDatosUsuario.Controls.Add(this.LblNombreUsuairo);
             this.GbxDatosUsuario.Controls.Add(this.LblClaveUsuario);
             this.GbxDatosUsuario.Controls.Add(this.LblLoginUsuario);
-            this.GbxDatosUsuario.Location = new System.Drawing.Point(32, 41);
+            this.GbxDatosUsuario.Location = new System.Drawing.Point(24, 33);
+            this.GbxDatosUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GbxDatosUsuario.Name = "GbxDatosUsuario";
-            this.GbxDatosUsuario.Size = new System.Drawing.Size(553, 238);
+            this.GbxDatosUsuario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbxDatosUsuario.Size = new System.Drawing.Size(415, 129);
             this.GbxDatosUsuario.TabIndex = 0;
             this.GbxDatosUsuario.TabStop = false;
             this.GbxDatosUsuario.Text = "Datos";
             // 
-            // LblLoginUsuario
+            // TxtNombreUsuario
             // 
-            this.LblLoginUsuario.AutoSize = true;
-            this.LblLoginUsuario.Location = new System.Drawing.Point(80, 31);
-            this.LblLoginUsuario.Name = "LblLoginUsuario";
-            this.LblLoginUsuario.Size = new System.Drawing.Size(43, 17);
-            this.LblLoginUsuario.TabIndex = 0;
-            this.LblLoginUsuario.Text = "Login";
+            this.TxtNombreUsuario.Location = new System.Drawing.Point(114, 30);
+            this.TxtNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtNombreUsuario.Name = "TxtNombreUsuario";
+            this.TxtNombreUsuario.Size = new System.Drawing.Size(282, 20);
+            this.TxtNombreUsuario.TabIndex = 0;
             // 
-            // LblClaveUsuario
+            // TxtClaveUsuario
             // 
-            this.LblClaveUsuario.AutoSize = true;
-            this.LblClaveUsuario.Location = new System.Drawing.Point(80, 78);
-            this.LblClaveUsuario.Name = "LblClaveUsuario";
-            this.LblClaveUsuario.Size = new System.Drawing.Size(43, 17);
-            this.LblClaveUsuario.TabIndex = 0;
-            this.LblClaveUsuario.Text = "Clave";
+            this.TxtClaveUsuario.Location = new System.Drawing.Point(114, 93);
+            this.TxtClaveUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtClaveUsuario.Name = "TxtClaveUsuario";
+            this.TxtClaveUsuario.PasswordChar = '*';
+            this.TxtClaveUsuario.Size = new System.Drawing.Size(282, 20);
+            this.TxtClaveUsuario.TabIndex = 2;
             // 
-            // ChbActivoUsuario
+            // TxtLoginUsuario
             // 
-            this.ChbActivoUsuario.AutoSize = true;
-            this.ChbActivoUsuario.Location = new System.Drawing.Point(152, 182);
-            this.ChbActivoUsuario.Name = "ChbActivoUsuario";
-            this.ChbActivoUsuario.Size = new System.Drawing.Size(68, 21);
-            this.ChbActivoUsuario.TabIndex = 1;
-            this.ChbActivoUsuario.Text = "Activo";
-            this.ChbActivoUsuario.UseVisualStyleBackColor = true;
-            // 
-            // ChbEstadoUsuario
-            // 
-            this.ChbEstadoUsuario.AutoSize = true;
-            this.ChbEstadoUsuario.Location = new System.Drawing.Point(380, 182);
-            this.ChbEstadoUsuario.Name = "ChbEstadoUsuario";
-            this.ChbEstadoUsuario.Size = new System.Drawing.Size(74, 21);
-            this.ChbEstadoUsuario.TabIndex = 1;
-            this.ChbEstadoUsuario.Text = "Estado";
-            this.ChbEstadoUsuario.UseVisualStyleBackColor = true;
+            this.TxtLoginUsuario.Location = new System.Drawing.Point(114, 63);
+            this.TxtLoginUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtLoginUsuario.Name = "TxtLoginUsuario";
+            this.TxtLoginUsuario.Size = new System.Drawing.Size(282, 20);
+            this.TxtLoginUsuario.TabIndex = 1;
             // 
             // LblNombreUsuairo
             // 
             this.LblNombreUsuairo.AutoSize = true;
-            this.LblNombreUsuairo.Location = new System.Drawing.Point(80, 122);
+            this.LblNombreUsuairo.Location = new System.Drawing.Point(60, 34);
+            this.LblNombreUsuairo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblNombreUsuairo.Name = "LblNombreUsuairo";
-            this.LblNombreUsuairo.Size = new System.Drawing.Size(57, 17);
+            this.LblNombreUsuairo.Size = new System.Drawing.Size(44, 13);
             this.LblNombreUsuairo.TabIndex = 0;
-            this.LblNombreUsuairo.Text = "Usuario";
+            this.LblNombreUsuairo.Text = "Nombre";
             // 
-            // TxtLoginUsuario
+            // LblClaveUsuario
             // 
-            this.TxtLoginUsuario.Location = new System.Drawing.Point(152, 31);
-            this.TxtLoginUsuario.Name = "TxtLoginUsuario";
-            this.TxtLoginUsuario.Size = new System.Drawing.Size(374, 22);
-            this.TxtLoginUsuario.TabIndex = 2;
+            this.LblClaveUsuario.AutoSize = true;
+            this.LblClaveUsuario.Location = new System.Drawing.Point(60, 93);
+            this.LblClaveUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblClaveUsuario.Name = "LblClaveUsuario";
+            this.LblClaveUsuario.Size = new System.Drawing.Size(34, 13);
+            this.LblClaveUsuario.TabIndex = 0;
+            this.LblClaveUsuario.Text = "Clave";
             // 
-            // TxtClaveUsuario
+            // LblLoginUsuario
             // 
-            this.TxtClaveUsuario.Location = new System.Drawing.Point(152, 78);
-            this.TxtClaveUsuario.Name = "TxtClaveUsuario";
-            this.TxtClaveUsuario.PasswordChar = '*';
-            this.TxtClaveUsuario.Size = new System.Drawing.Size(374, 22);
-            this.TxtClaveUsuario.TabIndex = 2;
-            // 
-            // TxtNombreUsuario
-            // 
-            this.TxtNombreUsuario.Location = new System.Drawing.Point(152, 122);
-            this.TxtNombreUsuario.Name = "TxtNombreUsuario";
-            this.TxtNombreUsuario.Size = new System.Drawing.Size(374, 22);
-            this.TxtNombreUsuario.TabIndex = 2;
+            this.LblLoginUsuario.AutoSize = true;
+            this.LblLoginUsuario.Location = new System.Drawing.Point(60, 66);
+            this.LblLoginUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblLoginUsuario.Name = "LblLoginUsuario";
+            this.LblLoginUsuario.Size = new System.Drawing.Size(33, 13);
+            this.LblLoginUsuario.TabIndex = 0;
+            this.LblLoginUsuario.Text = "Login";
             // 
             // GbxControlesUsuario
             // 
             this.GbxControlesUsuario.Controls.Add(this.CmdLImpiarUsuario);
             this.GbxControlesUsuario.Controls.Add(this.CmdNuevoUsuario);
-            this.GbxControlesUsuario.Location = new System.Drawing.Point(71, 311);
+            this.GbxControlesUsuario.Location = new System.Drawing.Point(81, 166);
+            this.GbxControlesUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GbxControlesUsuario.Name = "GbxControlesUsuario";
-            this.GbxControlesUsuario.Size = new System.Drawing.Size(477, 62);
+            this.GbxControlesUsuario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GbxControlesUsuario.Size = new System.Drawing.Size(358, 50);
             this.GbxControlesUsuario.TabIndex = 2;
             this.GbxControlesUsuario.TabStop = false;
             this.GbxControlesUsuario.Text = "Controles";
             // 
             // CmdLImpiarUsuario
             // 
-            this.CmdLImpiarUsuario.Location = new System.Drawing.Point(269, 21);
+            this.CmdLImpiarUsuario.Location = new System.Drawing.Point(95, 17);
+            this.CmdLImpiarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CmdLImpiarUsuario.Name = "CmdLImpiarUsuario";
-            this.CmdLImpiarUsuario.Size = new System.Drawing.Size(129, 35);
-            this.CmdLImpiarUsuario.TabIndex = 0;
-            this.CmdLImpiarUsuario.Text = "LImpiar";
+            this.CmdLImpiarUsuario.Size = new System.Drawing.Size(97, 28);
+            this.CmdLImpiarUsuario.TabIndex = 4;
+            this.CmdLImpiarUsuario.Text = "Limpiar";
             this.CmdLImpiarUsuario.UseVisualStyleBackColor = true;
+            this.CmdLImpiarUsuario.Click += new System.EventHandler(this.CmdLImpiarUsuario_Click);
             // 
             // CmdNuevoUsuario
             // 
-            this.CmdNuevoUsuario.Location = new System.Drawing.Point(76, 22);
+            this.CmdNuevoUsuario.Location = new System.Drawing.Point(233, 17);
+            this.CmdNuevoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CmdNuevoUsuario.Name = "CmdNuevoUsuario";
-            this.CmdNuevoUsuario.Size = new System.Drawing.Size(141, 34);
-            this.CmdNuevoUsuario.TabIndex = 0;
+            this.CmdNuevoUsuario.Size = new System.Drawing.Size(106, 28);
+            this.CmdNuevoUsuario.TabIndex = 3;
             this.CmdNuevoUsuario.Text = "Nuevo";
             this.CmdNuevoUsuario.UseVisualStyleBackColor = true;
+            this.CmdNuevoUsuario.Click += new System.EventHandler(this.CmdNuevoUsuario_Click);
             // 
             // FrmCrearUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.CmdNuevoUsuario;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 394);
+            this.ClientSize = new System.Drawing.Size(472, 223);
             this.Controls.Add(this.GbxControlesUsuario);
             this.Controls.Add(this.GbxDatosUsuario);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmCrearUsuario";
             this.Text = "Pantalla Usuario";
             this.GbxDatosUsuario.ResumeLayout(false);
@@ -181,8 +173,6 @@
         private System.Windows.Forms.TextBox TxtNombreUsuario;
         private System.Windows.Forms.TextBox TxtClaveUsuario;
         private System.Windows.Forms.TextBox TxtLoginUsuario;
-        private System.Windows.Forms.CheckBox ChbEstadoUsuario;
-        private System.Windows.Forms.CheckBox ChbActivoUsuario;
         private System.Windows.Forms.Label LblNombreUsuairo;
         private System.Windows.Forms.Label LblClaveUsuario;
         private System.Windows.Forms.Label LblLoginUsuario;
