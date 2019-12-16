@@ -57,6 +57,12 @@ namespace ProyectoPlanilla
 
         private void CmdNuevo_Click(object sender, EventArgs e)
         {
+            if (!validarDatos())
+            {
+                MessageBox.Show("Verifique la información insertada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             if (emp.Id == null)
             {
                 try
@@ -103,6 +109,25 @@ namespace ProyectoPlanilla
                 else
                     MessageBox.Show("No se pudo actualizar la información del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private bool validarDatos()
+        {
+            double sueldo = 0;
+
+            if (CbxGerencia.SelectedItem == null) return false;
+
+            if (TxtDireccionEmpleado.Text == string.Empty) return false;
+
+            double.TryParse(TxtSueldoBase.Text, out sueldo);
+
+            if (sueldo == 0) return false;
+
+            foreach (TextBox txt in this.CbxGerencia.Controls.OfType<TextBox>())
+                if (txt.Text.Length == 0) return false;
+
+
+            return true;
         }
 
         private void FrmCrearEmpleado_Load(object sender, EventArgs e)

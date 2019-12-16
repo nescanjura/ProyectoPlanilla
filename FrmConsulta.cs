@@ -33,6 +33,12 @@ namespace ProyectoPlanilla
 
         private void CmdImprimirConsulta_Click(object sender, EventArgs e)
         {
+            if (CmbEmpleadoConsulta.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             int idEmpleado = ((Empleado)CmbEmpleadoConsulta.SelectedItem).Id.Value;
             FrmDetaPlanilla Nuevo = new FrmDetaPlanilla(idEmpleado, DtpConsultaInicio.Value);
             Nuevo.Show();
