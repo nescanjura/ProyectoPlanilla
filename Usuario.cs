@@ -34,7 +34,7 @@ namespace ProyectoPlanilla
 
         public Usuario Obtener(int id)
         {
-            condiciones = $"ID = {id} AND {CONDICION_ESTADO}";
+            condiciones = $"ID = {id}";
             string str = Ejecutor.Consultar(TABLA, campos, condiciones);
             elementos = JArray.Parse(str);
 

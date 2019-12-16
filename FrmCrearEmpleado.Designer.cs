@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.GbxControlesEmpleado = new System.Windows.Forms.GroupBox();
-            this.BtnLimpiar = new System.Windows.Forms.Button();
             this.CmdNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbxGerencia = new System.Windows.Forms.ComboBox();
+            this.LblGerencia = new System.Windows.Forms.Label();
             this.TxtSueldoBase = new System.Windows.Forms.TextBox();
             this.LblSueldoBaseEmpleado = new System.Windows.Forms.Label();
             this.TxtDireccionEmpleado = new System.Windows.Forms.TextBox();
@@ -44,15 +45,12 @@
             this.LblTelefono = new System.Windows.Forms.Label();
             this.LblApellidoEmpleado = new System.Windows.Forms.Label();
             this.LblNombreEmpleado = new System.Windows.Forms.Label();
-            this.LblGerencia = new System.Windows.Forms.Label();
-            this.CbxGerencia = new System.Windows.Forms.ComboBox();
             this.GbxControlesEmpleado.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GbxControlesEmpleado
             // 
-            this.GbxControlesEmpleado.Controls.Add(this.BtnLimpiar);
             this.GbxControlesEmpleado.Controls.Add(this.CmdNuevo);
             this.GbxControlesEmpleado.Location = new System.Drawing.Point(51, 341);
             this.GbxControlesEmpleado.Margin = new System.Windows.Forms.Padding(2);
@@ -62,15 +60,6 @@
             this.GbxControlesEmpleado.TabIndex = 1;
             this.GbxControlesEmpleado.TabStop = false;
             this.GbxControlesEmpleado.Text = "Controles";
-            // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.Location = new System.Drawing.Point(75, 18);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(87, 27);
-            this.BtnLimpiar.TabIndex = 1;
-            this.BtnLimpiar.Text = "Limpiar";
-            this.BtnLimpiar.UseVisualStyleBackColor = true;
             // 
             // CmdNuevo
             // 
@@ -105,6 +94,24 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // CbxGerencia
+            // 
+            this.CbxGerencia.FormattingEnabled = true;
+            this.CbxGerencia.Location = new System.Drawing.Point(112, 28);
+            this.CbxGerencia.Name = "CbxGerencia";
+            this.CbxGerencia.Size = new System.Drawing.Size(263, 21);
+            this.CbxGerencia.TabIndex = 0;
+            this.CbxGerencia.Text = "[Seleccione]";
+            // 
+            // LblGerencia
+            // 
+            this.LblGerencia.AutoSize = true;
+            this.LblGerencia.Location = new System.Drawing.Point(47, 28);
+            this.LblGerencia.Name = "LblGerencia";
+            this.LblGerencia.Size = new System.Drawing.Size(50, 13);
+            this.LblGerencia.TabIndex = 17;
+            this.LblGerencia.Text = "Gerencia";
             // 
             // TxtSueldoBase
             // 
@@ -215,24 +222,6 @@
             this.LblNombreEmpleado.TabIndex = 10;
             this.LblNombreEmpleado.Text = "Nombre";
             // 
-            // LblGerencia
-            // 
-            this.LblGerencia.AutoSize = true;
-            this.LblGerencia.Location = new System.Drawing.Point(47, 28);
-            this.LblGerencia.Name = "LblGerencia";
-            this.LblGerencia.Size = new System.Drawing.Size(50, 13);
-            this.LblGerencia.TabIndex = 17;
-            this.LblGerencia.Text = "Gerencia";
-            // 
-            // CbxGerencia
-            // 
-            this.CbxGerencia.FormattingEnabled = true;
-            this.CbxGerencia.Location = new System.Drawing.Point(112, 28);
-            this.CbxGerencia.Name = "CbxGerencia";
-            this.CbxGerencia.Size = new System.Drawing.Size(263, 21);
-            this.CbxGerencia.TabIndex = 0;
-            this.CbxGerencia.Text = "[Seleccione]";
-            // 
             // FrmCrearEmpleado
             // 
             this.AcceptButton = this.CmdNuevo;
@@ -268,7 +257,6 @@
         private System.Windows.Forms.Label LblTelefono;
         private System.Windows.Forms.Label LblApellidoEmpleado;
         private System.Windows.Forms.Label LblNombreEmpleado;
-        private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.ComboBox CbxGerencia;
         private System.Windows.Forms.Label LblGerencia;
     }

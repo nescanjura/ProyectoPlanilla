@@ -31,7 +31,6 @@ namespace ProyectoPlanilla
         private void InitializeComponent()
         {
             this.GbxControlesUsuario = new System.Windows.Forms.GroupBox();
-            this.CmdLImpiarPlanilla = new System.Windows.Forms.Button();
             this.CmdNuevoPlanilla = new System.Windows.Forms.Button();
             this.GbxDatosPlanilla = new System.Windows.Forms.GroupBox();
             this.DtpFechaPlanilla = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +43,6 @@ namespace ProyectoPlanilla
             // 
             // GbxControlesUsuario
             // 
-            this.GbxControlesUsuario.Controls.Add(this.CmdLImpiarPlanilla);
             this.GbxControlesUsuario.Controls.Add(this.CmdNuevoPlanilla);
             this.GbxControlesUsuario.Location = new System.Drawing.Point(82, 181);
             this.GbxControlesUsuario.Margin = new System.Windows.Forms.Padding(2);
@@ -54,17 +52,6 @@ namespace ProyectoPlanilla
             this.GbxControlesUsuario.TabIndex = 4;
             this.GbxControlesUsuario.TabStop = false;
             this.GbxControlesUsuario.Text = "Controles";
-            // 
-            // CmdLImpiarPlanilla
-            // 
-            this.CmdLImpiarPlanilla.Location = new System.Drawing.Point(77, 17);
-            this.CmdLImpiarPlanilla.Margin = new System.Windows.Forms.Padding(2);
-            this.CmdLImpiarPlanilla.Name = "CmdLImpiarPlanilla";
-            this.CmdLImpiarPlanilla.Size = new System.Drawing.Size(97, 28);
-            this.CmdLImpiarPlanilla.TabIndex = 0;
-            this.CmdLImpiarPlanilla.Text = "LImpiar";
-            this.CmdLImpiarPlanilla.UseVisualStyleBackColor = true;
-            this.CmdLImpiarPlanilla.Click += new System.EventHandler(this.CmdLImpiarPlanilla_Click);
             // 
             // CmdNuevoPlanilla
             // 
@@ -152,7 +139,6 @@ namespace ProyectoPlanilla
         #endregion
 
         private System.Windows.Forms.GroupBox GbxControlesUsuario;
-        private System.Windows.Forms.Button CmdLImpiarPlanilla;
         private System.Windows.Forms.Button CmdNuevoPlanilla;
         private System.Windows.Forms.GroupBox GbxDatosPlanilla;
         private System.Windows.Forms.TextBox TxtNombrePlanilla;

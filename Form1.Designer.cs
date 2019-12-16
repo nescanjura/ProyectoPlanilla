@@ -32,10 +32,9 @@
             this.Mantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.Usuario = new System.Windows.Forms.ToolStripMenuItem();
             this.Empleado = new System.Windows.Forms.ToolStripMenuItem();
-            this.Gerencia = new System.Windows.Forms.ToolStripMenuItem();
             this.Planilla = new System.Windows.Forms.ToolStripMenuItem();
-            this.GenerarPlanilla = new System.Windows.Forms.ToolStripMenuItem();
             this.Planillas = new System.Windows.Forms.ToolStripMenuItem();
+            this.GenerarPlanilla = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,8 +55,7 @@
             // 
             this.Mantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Usuario,
-            this.Empleado,
-            this.Gerencia});
+            this.Empleado});
             this.Mantenimiento.Name = "Mantenimiento";
             this.Mantenimiento.Size = new System.Drawing.Size(116, 20);
             this.Mantenimiento.Text = "MANTENIMIENTO";
@@ -76,13 +74,6 @@
             this.Empleado.Text = "EMPLEADO";
             this.Empleado.Click += new System.EventHandler(this.eMPLEADOToolStripMenuItem_Click);
             // 
-            // Gerencia
-            // 
-            this.Gerencia.Name = "Gerencia";
-            this.Gerencia.Size = new System.Drawing.Size(152, 22);
-            this.Gerencia.Text = "GERENCIA";
-            this.Gerencia.Click += new System.EventHandler(this.gERENCIAToolStripMenuItem_Click);
-            // 
             // Planilla
             // 
             this.Planilla.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -92,19 +83,19 @@
             this.Planilla.Size = new System.Drawing.Size(72, 20);
             this.Planilla.Text = "PLANILLA";
             // 
-            // GenerarPlanilla
-            // 
-            this.GenerarPlanilla.Name = "GenerarPlanilla";
-            this.GenerarPlanilla.Size = new System.Drawing.Size(152, 22);
-            this.GenerarPlanilla.Text = "CONSULTAR";
-            this.GenerarPlanilla.Click += new System.EventHandler(this.gENERARPLANILLAToolStripMenuItem_Click);
-            // 
             // Planillas
             // 
             this.Planillas.Name = "Planillas";
-            this.Planillas.Size = new System.Drawing.Size(152, 22);
+            this.Planillas.Size = new System.Drawing.Size(140, 22);
             this.Planillas.Text = "PLANILLAS";
             this.Planillas.Click += new System.EventHandler(this.Planillas_Click);
+            // 
+            // GenerarPlanilla
+            // 
+            this.GenerarPlanilla.Name = "GenerarPlanilla";
+            this.GenerarPlanilla.Size = new System.Drawing.Size(140, 22);
+            this.GenerarPlanilla.Text = "CONSULTAR";
+            this.GenerarPlanilla.Click += new System.EventHandler(this.gENERARPLANILLAToolStripMenuItem_Click);
             // 
             // FrmPantallaPrincipal
             // 
@@ -132,7 +123,6 @@
         private System.Windows.Forms.ToolStripMenuItem Empleado;
         private System.Windows.Forms.ToolStripMenuItem Planilla;
         private System.Windows.Forms.ToolStripMenuItem GenerarPlanilla;
-        private System.Windows.Forms.ToolStripMenuItem Gerencia;
         private System.Windows.Forms.ToolStripMenuItem Planillas;
     }
 }
