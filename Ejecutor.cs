@@ -213,6 +213,7 @@ namespace ProyectoPlanilla
             Conexion conex = Conexion.ObtenerInstancia(); // Obtener la instancia de la clase Conexión
             OleDbConnection cnx = conex.ObtenerConexion(); // Obtener la conexión a la BD
 
+            cnx.Open(); // Abrir la conexión
             using (OleDbCommand cmd = cnx.CreateCommand())
             {
                 try

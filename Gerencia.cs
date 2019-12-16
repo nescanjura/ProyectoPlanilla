@@ -57,7 +57,7 @@ namespace ProyectoPlanilla
 
         public Gerencia Obtener(int id)
         {
-            condiciones = $"ID = {id}";
+            condiciones = $"id = {id}";
             string str = Ejecutor.Consultar(TABLA, campos, condiciones);
             elementos = JArray.Parse(str);
 

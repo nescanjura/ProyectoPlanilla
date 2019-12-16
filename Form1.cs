@@ -27,11 +27,9 @@ namespace ProyectoPlanilla
 
         private void uSUARIOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-              
-                FrmUsuario Nuevo = new FrmUsuario();
-                Nuevo.MdiParent = this;
-                Nuevo.Show();
-            
+            FrmUsuario Nuevo = new FrmUsuario();
+            Nuevo.MdiParent = this;
+            Nuevo.Show();   
         }
 
         private void eMPLEADOToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,22 +48,21 @@ namespace ProyectoPlanilla
 
         private void gENERARPLANILLAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPlanilla Nuevo = new FrmPlanilla();
-            Nuevo.MdiParent = this;
-            Nuevo.Show();
+            
         }
-
-        private void pLANILLAToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void hISTORICOPLANILLAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmConsulta Nuevo = new FrmConsulta();
             Nuevo.MdiParent = this;
             Nuevo.Show();
+        }
+
+        private void Planillas_Click(object sender, EventArgs e)
+        {
+            FrmPlanilla planilla = new FrmPlanilla();
+            planilla.MdiParent = this;
+            planilla.Show();
         }
     }
 }

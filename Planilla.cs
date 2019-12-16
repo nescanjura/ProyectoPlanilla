@@ -42,7 +42,7 @@ namespace ProyectoPlanilla
             set { fecha = value; }
         }
 
-        private int idUsuario;
+        private int idUsuario = 1;
 
         public int IdUsuario
         {
@@ -58,18 +58,30 @@ namespace ProyectoPlanilla
             elementos = JArray.Parse(str);
 
             var first = elementos.First;
-
-            return new Planilla()
+            try
             {
-                id = (int)first["id"],
-                Nombre = (string)first["nombre"],
-                Fecha = (DateTime)first["fecha"],
-                idUsuario = (int)first["idUsuario"]
-            };
+                return new Planilla()
+                {
+                    id = (int)first["id"],
+                    Nombre = (string)first["nombre"],
+                    Fecha = (DateTime)first["fecha"],
+                    idUsuario = (int)first["idUsuario"]
+                };
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error: {ex.Message}");
+            }
+
+            return null;
         }
 
         public int Agregar()
         {
+            int id = 0;
+            DetallePlanilla dp = new DetallePlanilla();
+            List<Empleado> empleados = new Empleado().ObtenerTodo();
+
             parametros = new Dictionary<string, object>()
             {
                 { "nombre", this.nombre },
@@ -77,7 +89,17 @@ namespace ProyectoPlanilla
                 { "idUsuario", this.idUsuario }
             };
 
-            return Ejecutor.Insertar(TABLA, parametros);
+            id = Ejecutor.Insertar(TABLA, parametros);
+
+            foreach (Empleado e in empleados)
+            {
+                dp.IdPlanilla = id;
+                dp.IdEmpleado = e.Id.Value;
+                dp.SueldoBase = e.SueldoBase;
+                dp.Agregar();
+            }
+
+            return id;
         }
 
         public bool Actualizar()
@@ -108,7 +130,7 @@ namespace ProyectoPlanilla
                     {
                         id = (int)el["id"],
                         Nombre = el["nombre"].ToString(),
-                        Fecha = Convert.ToDateTime(el["fechaNacimiento"].ToString())
+                        Fecha = Convert.ToDateTime(el["fecha"].ToString())
                     });
                 }
             }
@@ -124,7 +146,7 @@ namespace ProyectoPlanilla
         {
             if (id == null) return false;
 
-            return Ejecutor.Eliminar(TABLA, $"Id = {this.id}"); // Eliminar el registro de la base
+            return Ejecutor.Eliminar(TABLA, $"id = {this.id}"); // Eliminar el registro de la base
         }
 
         public Usuario ObtenerUsuario()
