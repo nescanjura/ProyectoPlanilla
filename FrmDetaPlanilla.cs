@@ -13,6 +13,8 @@ namespace ProyectoPlanilla
     public partial class FrmDetaPlanilla : Form
     {
         Planilla pln = new Planilla();
+        Empleado emp;
+        string mes;
         DetallePlanilla det = new DetallePlanilla();
         List<DetallePlanilla> detalles;
         public FrmDetaPlanilla()
@@ -28,10 +30,29 @@ namespace ProyectoPlanilla
             detalles = det.ObtenerPorPlanilla(pln.Id.Value);
         }
 
+        public FrmDetaPlanilla(int idEmpleado, DateTime mes)
+        {
+            InitializeComponent();
+
+            emp = new Empleado().Obtener(idEmpleado);
+            this.mes = mes.ToString("MMMM yyyy");
+            detalles = det.ObtenerPorEmpleadoMes(idEmpleado, mes);
+        }
+
         private void FrmDetaPlanilla_Load(object sender, EventArgs e)
         {
-            LblNombrePlanilla.Text = pln.Nombre;
-            LblFechaPlanilla.Text = pln.Fecha.ToString("MMMM yyyy");
+            if (emp != null)
+            {
+                LblTitulo.Text = "Empleado:";
+                LblNombrePlanilla.Text = emp.NombreCompleto;
+                LblFechaPlanilla.Text = mes;
+            }
+            else
+            {
+                LblTitulo.Text = "Planilla:";
+                LblNombrePlanilla.Text = pln.Nombre;
+                LblFechaPlanilla.Text = pln.Fecha.ToString("MMMM yyyy");
+            }
 
             CargarDetalles();
         }

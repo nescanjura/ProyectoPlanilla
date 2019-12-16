@@ -36,11 +36,10 @@ namespace ProyectoPlanilla
             {
                 FrmDetaPlanilla det = new FrmDetaPlanilla(idNuevo);
                 det.Show();
+                this.Close();
             }   
             else
-                MessageBox.Show("No se pudo registrar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            this.Close();
+                MessageBox.Show("No se pudo registrar la planilla, puede que la fecha esté repetida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

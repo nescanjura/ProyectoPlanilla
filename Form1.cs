@@ -48,7 +48,9 @@ namespace ProyectoPlanilla
 
         private void gENERARPLANILLAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            FrmConsulta consulta = new FrmConsulta();
+            consulta.MdiParent = this;
+            consulta.Show();
         }
 
         private void hISTORICOPLANILLAToolStripMenuItem_Click(object sender, EventArgs e)

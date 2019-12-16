@@ -82,6 +82,8 @@ namespace ProyectoPlanilla
             DetallePlanilla dp = new DetallePlanilla();
             List<Empleado> empleados = new Empleado().ObtenerTodo();
 
+            if (ObtenerPorMes().Count > 0) return 0;
+
             parametros = new Dictionary<string, object>()
             {
                 { "nombre", this.nombre },
@@ -96,6 +98,7 @@ namespace ProyectoPlanilla
                 dp.IdPlanilla = id;
                 dp.IdEmpleado = e.Id.Value;
                 dp.SueldoBase = e.SueldoBase;
+                dp.Fecha = fecha;
                 dp.Agregar();
             }
 
@@ -122,6 +125,33 @@ namespace ProyectoPlanilla
             try
             {
                 string str = Ejecutor.Consultar(TABLA, campos);
+                elementos = JArray.Parse(str);
+
+                foreach (JObject el in elementos)
+                {
+                    resultado.Add(new Planilla()
+                    {
+                        id = (int)el["id"],
+                        Nombre = el["nombre"].ToString(),
+                        Fecha = Convert.ToDateTime(el["fecha"].ToString())
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
+
+        public List<Planilla> ObtenerPorMes()
+        {
+            condiciones = $"Month(fecha) = {fecha.Month} AND Year(fecha) = {fecha.Year}";
+            List<Planilla> resultado = new List<Planilla>();
+            try
+            {
+                string str = Ejecutor.Consultar(TABLA, campos, condiciones);
                 elementos = JArray.Parse(str);
 
                 foreach (JObject el in elementos)

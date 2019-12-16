@@ -141,6 +141,7 @@ namespace ProyectoPlanilla
                 { "afpEmpleado", this.AfpEmpleado },
                 { "afpEmpleador", this.AfpEmpleador },
                 { "renta", this.Renta },
+                { "fecha", this.fecha.ToString("dd/MM/yyyy") },
                 { "idPlanilla", this.idPlanilla },
                 { "idEmpleado", this.IdEmpleado }
             };
@@ -169,6 +170,35 @@ namespace ProyectoPlanilla
         {
             List<DetallePlanilla> resultado = new List<DetallePlanilla>();
             condiciones = $"idPlanilla = {id}";
+            try
+            {
+                string str = Ejecutor.Consultar(TABLA, campos, condiciones);
+                elementos = JArray.Parse(str);
+
+                foreach (JObject el in elementos)
+                {
+                    resultado.Add(new DetallePlanilla()
+                    {
+                        id = (int)el["id"],
+                        sueldoBase = (double)el["sueldoBase"],
+                        fecha = (DateTime)el["fecha"],
+                        idEmpleado = (int)el["idEmpleado"],
+                        idPlanilla = (int)el["idPlanilla"]
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
+
+        public List<DetallePlanilla> ObtenerPorEmpleadoMes(int id, DateTime mes)
+        {
+            List<DetallePlanilla> resultado = new List<DetallePlanilla>();
+            condiciones = $"idEmpleado = {id} AND Month(fecha) = {mes.Month} AND Year(fecha) = {mes.Year}";
             try
             {
                 string str = Ejecutor.Consultar(TABLA, campos, condiciones);

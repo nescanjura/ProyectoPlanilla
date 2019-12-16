@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DgvDetaPlanilla = new System.Windows.Forms.DataGridView();
-            this.detaPlanillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
-            this.detaPlanillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter();
             this.ColNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSueldoBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +37,10 @@
             this.ColAfpEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAfpEmpleador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColRenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.detaPlanillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
+            this.detaPlanillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter();
+            this.LblTitulo = new System.Windows.Forms.Label();
             this.LblNombrePlanilla = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblFechaPlanilla = new System.Windows.Forms.Label();
@@ -61,27 +61,13 @@
             this.ColAfpEmpleador,
             this.ColRenta});
             this.DgvDetaPlanilla.Location = new System.Drawing.Point(11, 98);
-            this.DgvDetaPlanilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DgvDetaPlanilla.Margin = new System.Windows.Forms.Padding(2);
             this.DgvDetaPlanilla.Name = "DgvDetaPlanilla";
             this.DgvDetaPlanilla.RowHeadersVisible = false;
             this.DgvDetaPlanilla.RowHeadersWidth = 51;
             this.DgvDetaPlanilla.RowTemplate.Height = 24;
             this.DgvDetaPlanilla.Size = new System.Drawing.Size(677, 219);
             this.DgvDetaPlanilla.TabIndex = 0;
-            // 
-            // detaPlanillaBindingSource
-            // 
-            this.detaPlanillaBindingSource.DataMember = "DetaPlanilla";
-            this.detaPlanillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
-            // 
-            // proyectoPlanillaDataSet
-            // 
-            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
-            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // detaPlanillaTableAdapter
-            // 
-            this.detaPlanillaTableAdapter.ClearBeforeFill = true;
             // 
             // ColNumero
             // 
@@ -130,22 +116,36 @@
             this.ColRenta.ReadOnly = true;
             this.ColRenta.Width = 80;
             // 
-            // label1
+            // detaPlanillaBindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Planilla:";
+            this.detaPlanillaBindingSource.DataMember = "DetaPlanilla";
+            this.detaPlanillaBindingSource.DataSource = this.proyectoPlanillaDataSet;
+            // 
+            // proyectoPlanillaDataSet
+            // 
+            this.proyectoPlanillaDataSet.DataSetName = "ProyectoPlanillaDataSet";
+            this.proyectoPlanillaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // detaPlanillaTableAdapter
+            // 
+            this.detaPlanillaTableAdapter.ClearBeforeFill = true;
+            // 
+            // LblTitulo
+            // 
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Location = new System.Drawing.Point(31, 26);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(62, 20);
+            this.LblTitulo.TabIndex = 1;
+            this.LblTitulo.Text = "Planilla:";
             // 
             // LblNombrePlanilla
             // 
             this.LblNombrePlanilla.AutoSize = true;
             this.LblNombrePlanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LblNombrePlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNombrePlanilla.Location = new System.Drawing.Point(99, 27);
+            this.LblNombrePlanilla.Location = new System.Drawing.Point(113, 27);
             this.LblNombrePlanilla.Name = "LblNombrePlanilla";
             this.LblNombrePlanilla.Size = new System.Drawing.Size(2, 22);
             this.LblNombrePlanilla.TabIndex = 1;
@@ -165,7 +165,7 @@
             this.LblFechaPlanilla.AutoSize = true;
             this.LblFechaPlanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LblFechaPlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFechaPlanilla.Location = new System.Drawing.Point(99, 61);
+            this.LblFechaPlanilla.Location = new System.Drawing.Point(113, 61);
             this.LblFechaPlanilla.Name = "LblFechaPlanilla";
             this.LblFechaPlanilla.Size = new System.Drawing.Size(2, 22);
             this.LblFechaPlanilla.TabIndex = 1;
@@ -178,9 +178,9 @@
             this.Controls.Add(this.LblFechaPlanilla);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LblNombrePlanilla);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.DgvDetaPlanilla);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDetaPlanilla";
             this.Text = "FrmDetaPlanilla";
             this.Load += new System.EventHandler(this.FrmDetaPlanilla_Load);
@@ -205,7 +205,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAfpEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAfpEmpleador;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColRenta;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblTitulo;
         private System.Windows.Forms.Label LblNombrePlanilla;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblFechaPlanilla;

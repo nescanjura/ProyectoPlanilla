@@ -50,9 +50,9 @@ namespace ProyectoPlanilla
             foreach (Gerencia ger in gerencias)
             {
                 CbxGerencia.Items.Add(ger);
-                CbxGerencia.DisplayMember = "nombre";
-                CbxGerencia.ValueMember = "id";
             }
+            CbxGerencia.DisplayMember = "nombre";
+            CbxGerencia.ValueMember = "id";
         }
 
         private void CmdNuevo_Click(object sender, EventArgs e)

@@ -12,6 +12,7 @@ namespace ProyectoPlanilla
 {
     public partial class FrmConsulta : Form
     {
+        List<Empleado> empleados;
         public FrmConsulta()
         {
             InitializeComponent();
@@ -19,13 +20,21 @@ namespace ProyectoPlanilla
 
         private void FrmConsulta_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'proyectoPlanillaDataSet.Empleado' Puede moverla o quitarla según sea necesario.
-            this.empleadoTableAdapter.Fill(this.proyectoPlanillaDataSet.Empleado);
+            empleados = new Empleado().ObtenerTodo();
+
+            CmbEmpleadoConsulta.Items.Clear();
+            foreach (Empleado emp in empleados)
+            {
+                CmbEmpleadoConsulta.Items.Add(emp);
+            }
+            CmbEmpleadoConsulta.ValueMember = "id";
+            CmbEmpleadoConsulta.DisplayMember = "nombreCompleto";
         }
 
         private void CmdImprimirConsulta_Click(object sender, EventArgs e)
         {
-            FrmDetaPlanilla Nuevo = new FrmDetaPlanilla();
+            int idEmpleado = ((Empleado)CmbEmpleadoConsulta.SelectedItem).Id.Value;
+            FrmDetaPlanilla Nuevo = new FrmDetaPlanilla(idEmpleado, DtpConsultaInicio.Value);
             Nuevo.Show();
         }
     }
