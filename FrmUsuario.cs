@@ -70,7 +70,7 @@ namespace ProyectoPlanilla
                     if (usr.Eliminar())
                         MessageBox.Show("¡Se eliminó el registro correctamente!", "¡Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
-                        MessageBox.Show("No se pudo eliminarl el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("No se pudo eliminar el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     this.CargarDatos();
                 }

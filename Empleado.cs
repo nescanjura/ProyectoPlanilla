@@ -26,13 +26,11 @@ namespace ProyectoPlanilla
             set { apellido = value; }
         }
 
-        private DateTime fechaNacimiento;
-
-        public DateTime FechaNacimiento
+        public string NombreCompleto
         {
-            get { return fechaNacimiento; }
-            set { fechaNacimiento = value; }
+            get { return $"{nombre} {apellido}"; }
         }
+
 
         private string direccion;
 
@@ -48,14 +46,6 @@ namespace ProyectoPlanilla
         {
             get { return telefono; }
             set { telefono = value; }
-        }
-
-        private string sexo;
-
-        public string Sexo
-        {
-            get { return sexo; }
-            set { sexo = value; }
         }
 
         private string email;
@@ -81,7 +71,7 @@ namespace ProyectoPlanilla
             set { sueldoBase = value; }
         }
 
-        private int idUsuario;
+        private int idUsuario = 1;
 
         public int IdUsuario
         {
@@ -93,6 +83,7 @@ namespace ProyectoPlanilla
         public int IdGerencia
         {
             get { return idGerencia; }
+            set { idGerencia = value; }
         }
         #endregion
 
@@ -110,12 +101,13 @@ namespace ProyectoPlanilla
                 id = (int)first["id"],
                 Nombre = first["nombre"].ToString(),
                 Apellido = first["apellido"].ToString(),
-                FechaNacimiento = Convert.ToDateTime(first["fechaNacimiento"].ToString()),
                 Email = first["email"].ToString(),
                 Direccion = first["direccion"].ToString(),
                 Telefono = first["telefono"].ToString(),
                 sueldoBase = Convert.ToDouble(first["sueldoBase"].ToString()),
-                Estado = (bool)first["estado"]
+                Estado = (bool)first["estado"],
+                idGerencia = (int)first["idGerencia"],
+                idUsuario = (int)first["idUsuario"]
             };
         }
 
@@ -125,8 +117,6 @@ namespace ProyectoPlanilla
             {
                 { "nombre", this.nombre },
                 { "apellido", this.apellido },
-                { "sexo", this.sexo },
-                { "fechaNacimiento", this.fechaNacimiento.ToString("dd/MM/yyyy") },
                 { "telefono", this.telefono },
                 { "email", this.email },
                 { "direccion", this.direccion },
@@ -147,8 +137,6 @@ namespace ProyectoPlanilla
             {
                 { "nombre", this.nombre },
                 { "apellido", this.apellido },
-                { "fechaNacimiento", this.fechaNacimiento.ToString("dd/MM/yyyy") },
-                { "sexo", this.sexo },
                 { "email", this.email },
                 { "direccion", this.direccion },
                 { "telefono", this.telefono },
@@ -174,7 +162,6 @@ namespace ProyectoPlanilla
                         id = (int)el["id"],
                         Nombre = el["nombre"].ToString(),
                         Apellido = el["apellido"].ToString(),
-                        FechaNacimiento = Convert.ToDateTime(el["fechaNacimiento"].ToString()),
                         Email = el["email"].ToString(),
                         Direccion = el["direccion"].ToString(),
                         Telefono = el["telefono"].ToString(),
@@ -206,7 +193,14 @@ namespace ProyectoPlanilla
         {
             if (id == null) return null;
 
-            return new Usuario().Obtener(this.idUsuario);
+            return new Usuario().Obtener(idUsuario);
+        }
+
+        public Gerencia ObtenerGerencia()
+        {
+            if (id == null) return null;
+
+            return new Gerencia().Obtener(idGerencia);
         }
         #endregion
     }
