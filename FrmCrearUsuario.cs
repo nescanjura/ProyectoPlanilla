@@ -19,6 +19,7 @@ namespace ProyectoPlanilla
             InitializeComponent();
 
             TxtClaveUsuario.Visible = true;
+            TxtClaveUsuario.Visible = true;
             CmdNuevoUsuario.Text = "Nuevo";
         }
 
@@ -76,9 +77,8 @@ namespace ProyectoPlanilla
 
         private void LimpiarCampos()
         {
-            TxtNombreUsuario.Text = string.Empty;
-            TxtLoginUsuario.Text = string.Empty;
-            TxtClaveUsuario.Text = string.Empty;
+            foreach (TextBox txt in this.GbxDatosUsuario.Controls.OfType<TextBox>())
+                txt.Text = string.Empty;
         }
 
         private bool validar()

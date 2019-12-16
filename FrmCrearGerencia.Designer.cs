@@ -32,12 +32,12 @@
             this.CmdLImpiarGerencia = new System.Windows.Forms.Button();
             this.CmdNuevoGerencia = new System.Windows.Forms.Button();
             this.GbxDatosUsuario = new System.Windows.Forms.GroupBox();
-            this.TxtLoginUsuario = new System.Windows.Forms.TextBox();
-            this.chbEstadoGerencia = new System.Windows.Forms.CheckBox();
+            this.TxtPorcentajeBonoGerencia = new System.Windows.Forms.TextBox();
+            this.TxtNombreGerencia = new System.Windows.Forms.TextBox();
+            this.chbHorasExtrasGerencia = new System.Windows.Forms.CheckBox();
+            this.LblPorcentajeBonoGerencia = new System.Windows.Forms.Label();
             this.ChbBonoGerencia = new System.Windows.Forms.CheckBox();
             this.LblNombreGerencia = new System.Windows.Forms.Label();
-            this.LblPorcentajeBonoGerencia = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.GbxControlesGerencia.SuspendLayout();
             this.GbxDatosUsuario.SuspendLayout();
             this.SuspendLayout();
@@ -58,24 +58,26 @@
             this.CmdLImpiarGerencia.Location = new System.Drawing.Point(269, 21);
             this.CmdLImpiarGerencia.Name = "CmdLImpiarGerencia";
             this.CmdLImpiarGerencia.Size = new System.Drawing.Size(129, 35);
-            this.CmdLImpiarGerencia.TabIndex = 0;
+            this.CmdLImpiarGerencia.TabIndex = 5;
             this.CmdLImpiarGerencia.Text = "LImpiar";
             this.CmdLImpiarGerencia.UseVisualStyleBackColor = true;
+            this.CmdLImpiarGerencia.Click += new System.EventHandler(this.CmdLImpiarGerencia_Click);
             // 
             // CmdNuevoGerencia
             // 
             this.CmdNuevoGerencia.Location = new System.Drawing.Point(76, 22);
             this.CmdNuevoGerencia.Name = "CmdNuevoGerencia";
             this.CmdNuevoGerencia.Size = new System.Drawing.Size(141, 34);
-            this.CmdNuevoGerencia.TabIndex = 0;
+            this.CmdNuevoGerencia.TabIndex = 4;
             this.CmdNuevoGerencia.Text = "Nuevo";
             this.CmdNuevoGerencia.UseVisualStyleBackColor = true;
+            this.CmdNuevoGerencia.Click += new System.EventHandler(this.CmdNuevoGerencia_Click);
             // 
             // GbxDatosUsuario
             // 
-            this.GbxDatosUsuario.Controls.Add(this.textBox1);
-            this.GbxDatosUsuario.Controls.Add(this.TxtLoginUsuario);
-            this.GbxDatosUsuario.Controls.Add(this.chbEstadoGerencia);
+            this.GbxDatosUsuario.Controls.Add(this.TxtPorcentajeBonoGerencia);
+            this.GbxDatosUsuario.Controls.Add(this.TxtNombreGerencia);
+            this.GbxDatosUsuario.Controls.Add(this.chbHorasExtrasGerencia);
             this.GbxDatosUsuario.Controls.Add(this.LblPorcentajeBonoGerencia);
             this.GbxDatosUsuario.Controls.Add(this.ChbBonoGerencia);
             this.GbxDatosUsuario.Controls.Add(this.LblNombreGerencia);
@@ -86,41 +88,29 @@
             this.GbxDatosUsuario.TabStop = false;
             this.GbxDatosUsuario.Text = "Datos";
             // 
-            // TxtLoginUsuario
+            // TxtPorcentajeBonoGerencia
             // 
-            this.TxtLoginUsuario.Location = new System.Drawing.Point(121, 34);
-            this.TxtLoginUsuario.Name = "TxtLoginUsuario";
-            this.TxtLoginUsuario.Size = new System.Drawing.Size(395, 22);
-            this.TxtLoginUsuario.TabIndex = 2;
+            this.TxtPorcentajeBonoGerencia.Location = new System.Drawing.Point(184, 77);
+            this.TxtPorcentajeBonoGerencia.Name = "TxtPorcentajeBonoGerencia";
+            this.TxtPorcentajeBonoGerencia.Size = new System.Drawing.Size(128, 22);
+            this.TxtPorcentajeBonoGerencia.TabIndex = 1;
             // 
-            // chbEstadoGerencia
+            // TxtNombreGerencia
             // 
-            this.chbEstadoGerencia.AutoSize = true;
-            this.chbEstadoGerencia.Location = new System.Drawing.Point(411, 117);
-            this.chbEstadoGerencia.Name = "chbEstadoGerencia";
-            this.chbEstadoGerencia.Size = new System.Drawing.Size(153, 21);
-            this.chbEstadoGerencia.TabIndex = 1;
-            this.chbEstadoGerencia.Text = "Aplica Horas Extras";
-            this.chbEstadoGerencia.UseVisualStyleBackColor = true;
+            this.TxtNombreGerencia.Location = new System.Drawing.Point(121, 34);
+            this.TxtNombreGerencia.Name = "TxtNombreGerencia";
+            this.TxtNombreGerencia.Size = new System.Drawing.Size(395, 22);
+            this.TxtNombreGerencia.TabIndex = 0;
             // 
-            // ChbBonoGerencia
+            // chbHorasExtrasGerencia
             // 
-            this.ChbBonoGerencia.AutoSize = true;
-            this.ChbBonoGerencia.Location = new System.Drawing.Point(411, 80);
-            this.ChbBonoGerencia.Name = "ChbBonoGerencia";
-            this.ChbBonoGerencia.Size = new System.Drawing.Size(105, 21);
-            this.ChbBonoGerencia.TabIndex = 1;
-            this.ChbBonoGerencia.Text = "Aplica Bono";
-            this.ChbBonoGerencia.UseVisualStyleBackColor = true;
-            // 
-            // LblNombreGerencia
-            // 
-            this.LblNombreGerencia.AutoSize = true;
-            this.LblNombreGerencia.Location = new System.Drawing.Point(49, 34);
-            this.LblNombreGerencia.Name = "LblNombreGerencia";
-            this.LblNombreGerencia.Size = new System.Drawing.Size(58, 17);
-            this.LblNombreGerencia.TabIndex = 0;
-            this.LblNombreGerencia.Text = "Nombre";
+            this.chbHorasExtrasGerencia.AutoSize = true;
+            this.chbHorasExtrasGerencia.Location = new System.Drawing.Point(411, 117);
+            this.chbHorasExtrasGerencia.Name = "chbHorasExtrasGerencia";
+            this.chbHorasExtrasGerencia.Size = new System.Drawing.Size(153, 21);
+            this.chbHorasExtrasGerencia.TabIndex = 3;
+            this.chbHorasExtrasGerencia.Text = "Aplica Horas Extras";
+            this.chbHorasExtrasGerencia.UseVisualStyleBackColor = true;
             // 
             // LblPorcentajeBonoGerencia
             // 
@@ -131,12 +121,25 @@
             this.LblPorcentajeBonoGerencia.TabIndex = 0;
             this.LblPorcentajeBonoGerencia.Text = "Porcentaje Bono";
             // 
-            // textBox1
+            // ChbBonoGerencia
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 22);
-            this.textBox1.TabIndex = 2;
+            this.ChbBonoGerencia.AutoSize = true;
+            this.ChbBonoGerencia.Location = new System.Drawing.Point(411, 80);
+            this.ChbBonoGerencia.Name = "ChbBonoGerencia";
+            this.ChbBonoGerencia.Size = new System.Drawing.Size(105, 21);
+            this.ChbBonoGerencia.TabIndex = 2;
+            this.ChbBonoGerencia.Text = "Aplica Bono";
+            this.ChbBonoGerencia.UseVisualStyleBackColor = true;
+            this.ChbBonoGerencia.CheckedChanged += new System.EventHandler(this.ChbBonoGerencia_CheckedChanged);
+            // 
+            // LblNombreGerencia
+            // 
+            this.LblNombreGerencia.AutoSize = true;
+            this.LblNombreGerencia.Location = new System.Drawing.Point(49, 34);
+            this.LblNombreGerencia.Name = "LblNombreGerencia";
+            this.LblNombreGerencia.Size = new System.Drawing.Size(58, 17);
+            this.LblNombreGerencia.TabIndex = 0;
+            this.LblNombreGerencia.Text = "Nombre";
             // 
             // FrmCrearGerencia
             // 
@@ -160,11 +163,11 @@
         private System.Windows.Forms.Button CmdLImpiarGerencia;
         private System.Windows.Forms.Button CmdNuevoGerencia;
         private System.Windows.Forms.GroupBox GbxDatosUsuario;
-        private System.Windows.Forms.TextBox TxtLoginUsuario;
-        private System.Windows.Forms.CheckBox chbEstadoGerencia;
+        private System.Windows.Forms.TextBox TxtNombreGerencia;
+        private System.Windows.Forms.CheckBox chbHorasExtrasGerencia;
         private System.Windows.Forms.CheckBox ChbBonoGerencia;
         private System.Windows.Forms.Label LblNombreGerencia;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtPorcentajeBonoGerencia;
         private System.Windows.Forms.Label LblPorcentajeBonoGerencia;
     }
 }

@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.DgvGerencia = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.derechoBonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horasExtrasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porcentajeBonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gerenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
             this.gerenciaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.GerenciaTableAdapter();
             this.CmdCrearGerencia = new System.Windows.Forms.Button();
+            this.ColNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHorasExtras = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColBono = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColPorcentajeBono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGerencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerenciaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
@@ -48,77 +48,27 @@
             // 
             // DgvGerencia
             // 
-            this.DgvGerencia.AutoGenerateColumns = false;
+            this.DgvGerencia.AllowUserToAddRows = false;
+            this.DgvGerencia.AllowUserToDeleteRows = false;
+            this.DgvGerencia.AllowUserToResizeColumns = false;
+            this.DgvGerencia.AllowUserToResizeRows = false;
             this.DgvGerencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvGerencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreDataGridViewTextBoxColumn,
-            this.derechoBonoDataGridViewTextBoxColumn,
-            this.horasExtrasDataGridViewTextBoxColumn,
-            this.porcentajeBonoDataGridViewTextBoxColumn,
-            this.idUsuarioDataGridViewTextBoxColumn,
-            this.Actualizar,
-            this.Eliminar});
-            this.DgvGerencia.DataSource = this.gerenciaBindingSource;
+            this.ColNumero,
+            this.ColNombre,
+            this.ColHorasExtras,
+            this.ColBono,
+            this.ColPorcentajeBono,
+            this.ColEditar,
+            this.ColEliminar});
             this.DgvGerencia.Location = new System.Drawing.Point(33, 43);
             this.DgvGerencia.Name = "DgvGerencia";
+            this.DgvGerencia.RowHeadersVisible = false;
             this.DgvGerencia.RowHeadersWidth = 51;
             this.DgvGerencia.RowTemplate.Height = 24;
             this.DgvGerencia.Size = new System.Drawing.Size(1064, 213);
             this.DgvGerencia.TabIndex = 4;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // derechoBonoDataGridViewTextBoxColumn
-            // 
-            this.derechoBonoDataGridViewTextBoxColumn.DataPropertyName = "derechoBono";
-            this.derechoBonoDataGridViewTextBoxColumn.HeaderText = "derechoBono";
-            this.derechoBonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.derechoBonoDataGridViewTextBoxColumn.Name = "derechoBonoDataGridViewTextBoxColumn";
-            this.derechoBonoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // horasExtrasDataGridViewTextBoxColumn
-            // 
-            this.horasExtrasDataGridViewTextBoxColumn.DataPropertyName = "horasExtras";
-            this.horasExtrasDataGridViewTextBoxColumn.HeaderText = "horasExtras";
-            this.horasExtrasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.horasExtrasDataGridViewTextBoxColumn.Name = "horasExtrasDataGridViewTextBoxColumn";
-            this.horasExtrasDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // porcentajeBonoDataGridViewTextBoxColumn
-            // 
-            this.porcentajeBonoDataGridViewTextBoxColumn.DataPropertyName = "porcentajeBono";
-            this.porcentajeBonoDataGridViewTextBoxColumn.HeaderText = "porcentajeBono";
-            this.porcentajeBonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.porcentajeBonoDataGridViewTextBoxColumn.Name = "porcentajeBonoDataGridViewTextBoxColumn";
-            this.porcentajeBonoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // idUsuarioDataGridViewTextBoxColumn
-            // 
-            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
-            this.idUsuarioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Actualizar
-            // 
-            this.Actualizar.HeaderText = "";
-            this.Actualizar.MinimumWidth = 6;
-            this.Actualizar.Name = "Actualizar";
-            this.Actualizar.Width = 125;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 125;
+            this.DgvGerencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGerencia_CellContentClick);
             // 
             // gerenciaBindingSource
             // 
@@ -144,6 +94,66 @@
             this.CmdCrearGerencia.UseVisualStyleBackColor = true;
             this.CmdCrearGerencia.Click += new System.EventHandler(this.CmdCrearGerencia_Click);
             // 
+            // ColNumero
+            // 
+            this.ColNumero.HeaderText = "No.";
+            this.ColNumero.MinimumWidth = 6;
+            this.ColNumero.Name = "ColNumero";
+            this.ColNumero.ReadOnly = true;
+            this.ColNumero.Width = 30;
+            // 
+            // ColNombre
+            // 
+            this.ColNombre.HeaderText = "Nombre";
+            this.ColNombre.MinimumWidth = 6;
+            this.ColNombre.Name = "ColNombre";
+            this.ColNombre.ReadOnly = true;
+            this.ColNombre.Width = 125;
+            // 
+            // ColHorasExtras
+            // 
+            this.ColHorasExtras.HeaderText = "Horas extras";
+            this.ColHorasExtras.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColHorasExtras.MinimumWidth = 6;
+            this.ColHorasExtras.Name = "ColHorasExtras";
+            this.ColHorasExtras.ReadOnly = true;
+            this.ColHorasExtras.Width = 125;
+            // 
+            // ColBono
+            // 
+            this.ColBono.HeaderText = "Bono";
+            this.ColBono.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColBono.MinimumWidth = 6;
+            this.ColBono.Name = "ColBono";
+            this.ColBono.ReadOnly = true;
+            this.ColBono.Width = 125;
+            // 
+            // ColPorcentajeBono
+            // 
+            this.ColPorcentajeBono.HeaderText = "% Bono";
+            this.ColPorcentajeBono.MinimumWidth = 6;
+            this.ColPorcentajeBono.Name = "ColPorcentajeBono";
+            this.ColPorcentajeBono.ReadOnly = true;
+            this.ColPorcentajeBono.Width = 125;
+            // 
+            // ColEditar
+            // 
+            this.ColEditar.HeaderText = "";
+            this.ColEditar.Image = global::ProyectoPlanilla.Properties.Resources.editar_naranja;
+            this.ColEditar.MinimumWidth = 6;
+            this.ColEditar.Name = "ColEditar";
+            this.ColEditar.ReadOnly = true;
+            this.ColEditar.Width = 35;
+            // 
+            // ColEliminar
+            // 
+            this.ColEliminar.HeaderText = "";
+            this.ColEliminar.Image = global::ProyectoPlanilla.Properties.Resources.eliminar_rojo;
+            this.ColEliminar.MinimumWidth = 6;
+            this.ColEliminar.Name = "ColEliminar";
+            this.ColEliminar.ReadOnly = true;
+            this.ColEliminar.Width = 35;
+            // 
             // FrmGerencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,13 +176,13 @@
         private ProyectoPlanillaDataSet proyectoPlanillaDataSet;
         private System.Windows.Forms.BindingSource gerenciaBindingSource;
         private ProyectoPlanillaDataSetTableAdapters.GerenciaTableAdapter gerenciaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn derechoBonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horasExtrasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn porcentajeBonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Actualizar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.Button CmdCrearGerencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridViewImageColumn ColHorasExtras;
+        private System.Windows.Forms.DataGridViewImageColumn ColBono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPorcentajeBono;
+        private System.Windows.Forms.DataGridViewImageColumn ColEditar;
+        private System.Windows.Forms.DataGridViewImageColumn ColEliminar;
     }
 }
