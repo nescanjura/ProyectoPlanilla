@@ -22,7 +22,8 @@ namespace ProyectoPlanilla
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            if (Sesion.usuario != null)
+                TxtNombreUsuario.Text = Sesion.usuario.Nombre;
         }
 
         private void uSUARIOToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +66,14 @@ namespace ProyectoPlanilla
             FrmPlanilla planilla = new FrmPlanilla();
             planilla.MdiParent = this;
             planilla.Show();
+        }
+
+        private void TxtCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            Sesion.usuario = null;
+            this.Close();
         }
     }
 }

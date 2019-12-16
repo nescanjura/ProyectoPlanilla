@@ -38,8 +38,29 @@ namespace ProyectoPlanilla
             string str = Ejecutor.Consultar(TABLA, campos, condiciones);
             elementos = JArray.Parse(str);
 
+            if (elementos.Count != 1) return null;
+
             var first = elementos.First;
 
+            return new Usuario()
+            {
+                id = (int)first["id"],
+                Nombre = (string)first["nombre"],
+                Login = (string)first["login"],
+                Estado = (bool)first["estado"]
+            };
+        }
+
+        public Usuario LogIn()
+        {
+            condiciones = $"login = '{login}' AND clave = '{clave}' AND estado = true";
+            string str = Ejecutor.Consultar(TABLA, campos, condiciones);
+            elementos = JArray.Parse(str);
+
+            if (elementos.Count != 1) return null;
+
+            var first = elementos.First;
+            
             return new Usuario()
             {
                 id = (int)first["id"],

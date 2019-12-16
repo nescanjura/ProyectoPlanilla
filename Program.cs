@@ -19,7 +19,11 @@ namespace ProyectoPlanilla
             AppDomain.CurrentDomain.SetData("DataDirectory", @"C:\ProyectoPlanilla");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPantallaPrincipal());
+
+            Login log = new Login();
+            log.Show();
+
+            Application.Run();
         }
     }
 }
