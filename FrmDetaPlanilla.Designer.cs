@@ -33,45 +33,40 @@
             this.detaPlanillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proyectoPlanillaDataSet = new ProyectoPlanilla.ProyectoPlanillaDataSet();
             this.detaPlanillaTableAdapter = new ProyectoPlanilla.ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter();
-            this.GbxControlesDetaPlanilla = new System.Windows.Forms.GroupBox();
-            this.CmdCrearDetallePlanila = new System.Windows.Forms.Button();
-            this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPlanillaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sueldoBaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isssDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.afpEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.afpEmpleadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Actualizar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSueldoBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColIsss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAfpEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAfpEmpleador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColRenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LblNombrePlanilla = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblFechaPlanilla = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetaPlanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaPlanillaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).BeginInit();
-            this.GbxControlesDetaPlanilla.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvDetaPlanilla
             // 
-            this.DgvDetaPlanilla.AutoGenerateColumns = false;
             this.DgvDetaPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDetaPlanilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idEmpleadoDataGridViewTextBoxColumn,
-            this.idPlanillaDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
-            this.sueldoBaseDataGridViewTextBoxColumn,
-            this.isssDataGridViewTextBoxColumn,
-            this.afpEmpleadoDataGridViewTextBoxColumn,
-            this.afpEmpleadorDataGridViewTextBoxColumn,
-            this.rentaDataGridViewTextBoxColumn,
-            this.Actualizar,
-            this.Eliminar});
-            this.DgvDetaPlanilla.DataSource = this.detaPlanillaBindingSource;
-            this.DgvDetaPlanilla.Location = new System.Drawing.Point(36, 66);
+            this.ColNumero,
+            this.ColEmpleado,
+            this.ColSueldoBase,
+            this.ColIsss,
+            this.ColAfpEmpleado,
+            this.ColAfpEmpleador,
+            this.ColRenta});
+            this.DgvDetaPlanilla.Location = new System.Drawing.Point(11, 98);
+            this.DgvDetaPlanilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DgvDetaPlanilla.Name = "DgvDetaPlanilla";
+            this.DgvDetaPlanilla.RowHeadersVisible = false;
             this.DgvDetaPlanilla.RowHeadersWidth = 51;
             this.DgvDetaPlanilla.RowTemplate.Height = 24;
-            this.DgvDetaPlanilla.Size = new System.Drawing.Size(998, 219);
+            this.DgvDetaPlanilla.Size = new System.Drawing.Size(677, 219);
             this.DgvDetaPlanilla.TabIndex = 0;
             // 
             // detaPlanillaBindingSource
@@ -88,122 +83,112 @@
             // 
             this.detaPlanillaTableAdapter.ClearBeforeFill = true;
             // 
-            // GbxControlesDetaPlanilla
+            // ColNumero
             // 
-            this.GbxControlesDetaPlanilla.Controls.Add(this.CmdCrearDetallePlanila);
-            this.GbxControlesDetaPlanilla.Location = new System.Drawing.Point(475, 322);
-            this.GbxControlesDetaPlanilla.Name = "GbxControlesDetaPlanilla";
-            this.GbxControlesDetaPlanilla.Size = new System.Drawing.Size(144, 88);
-            this.GbxControlesDetaPlanilla.TabIndex = 2;
-            this.GbxControlesDetaPlanilla.TabStop = false;
-            this.GbxControlesDetaPlanilla.Text = "Controles";
+            this.ColNumero.HeaderText = "No.";
+            this.ColNumero.Name = "ColNumero";
+            this.ColNumero.ReadOnly = true;
+            this.ColNumero.Width = 40;
             // 
-            // CmdCrearDetallePlanila
+            // ColEmpleado
             // 
-            this.CmdCrearDetallePlanila.Location = new System.Drawing.Point(33, 32);
-            this.CmdCrearDetallePlanila.Name = "CmdCrearDetallePlanila";
-            this.CmdCrearDetallePlanila.Size = new System.Drawing.Size(81, 32);
-            this.CmdCrearDetallePlanila.TabIndex = 0;
-            this.CmdCrearDetallePlanila.Text = "Crear";
-            this.CmdCrearDetallePlanila.UseVisualStyleBackColor = true;
+            this.ColEmpleado.HeaderText = "Empleado";
+            this.ColEmpleado.Name = "ColEmpleado";
+            this.ColEmpleado.ReadOnly = true;
+            this.ColEmpleado.Width = 140;
             // 
-            // idEmpleadoDataGridViewTextBoxColumn
+            // ColSueldoBase
             // 
-            this.idEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado";
-            this.idEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado";
-            this.idEmpleadoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idEmpleadoDataGridViewTextBoxColumn.Name = "idEmpleadoDataGridViewTextBoxColumn";
-            this.idEmpleadoDataGridViewTextBoxColumn.Width = 125;
+            this.ColSueldoBase.HeaderText = "Sueldo Base";
+            this.ColSueldoBase.Name = "ColSueldoBase";
+            this.ColSueldoBase.ReadOnly = true;
+            this.ColSueldoBase.Width = 90;
             // 
-            // idPlanillaDataGridViewTextBoxColumn
+            // ColIsss
             // 
-            this.idPlanillaDataGridViewTextBoxColumn.DataPropertyName = "idPlanilla";
-            this.idPlanillaDataGridViewTextBoxColumn.HeaderText = "idPlanilla";
-            this.idPlanillaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idPlanillaDataGridViewTextBoxColumn.Name = "idPlanillaDataGridViewTextBoxColumn";
-            this.idPlanillaDataGridViewTextBoxColumn.Width = 125;
+            this.ColIsss.HeaderText = "ISSS";
+            this.ColIsss.Name = "ColIsss";
+            this.ColIsss.ReadOnly = true;
+            this.ColIsss.Width = 70;
             // 
-            // fechaDataGridViewTextBoxColumn
+            // ColAfpEmpleado
             // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
+            this.ColAfpEmpleado.HeaderText = "AFP Empleado";
+            this.ColAfpEmpleado.Name = "ColAfpEmpleado";
+            this.ColAfpEmpleado.ReadOnly = true;
             // 
-            // sueldoBaseDataGridViewTextBoxColumn
+            // ColAfpEmpleador
             // 
-            this.sueldoBaseDataGridViewTextBoxColumn.DataPropertyName = "sueldoBase";
-            this.sueldoBaseDataGridViewTextBoxColumn.HeaderText = "sueldoBase";
-            this.sueldoBaseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sueldoBaseDataGridViewTextBoxColumn.Name = "sueldoBaseDataGridViewTextBoxColumn";
-            this.sueldoBaseDataGridViewTextBoxColumn.Width = 125;
+            this.ColAfpEmpleador.HeaderText = "AFP Empleador";
+            this.ColAfpEmpleador.Name = "ColAfpEmpleador";
+            this.ColAfpEmpleador.ReadOnly = true;
             // 
-            // isssDataGridViewTextBoxColumn
+            // ColRenta
             // 
-            this.isssDataGridViewTextBoxColumn.DataPropertyName = "isss";
-            this.isssDataGridViewTextBoxColumn.HeaderText = "isss";
-            this.isssDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.isssDataGridViewTextBoxColumn.Name = "isssDataGridViewTextBoxColumn";
-            this.isssDataGridViewTextBoxColumn.Width = 125;
+            this.ColRenta.HeaderText = "Renta";
+            this.ColRenta.Name = "ColRenta";
+            this.ColRenta.ReadOnly = true;
+            this.ColRenta.Width = 80;
             // 
-            // afpEmpleadoDataGridViewTextBoxColumn
+            // label1
             // 
-            this.afpEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "afpEmpleado";
-            this.afpEmpleadoDataGridViewTextBoxColumn.HeaderText = "afpEmpleado";
-            this.afpEmpleadoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.afpEmpleadoDataGridViewTextBoxColumn.Name = "afpEmpleadoDataGridViewTextBoxColumn";
-            this.afpEmpleadoDataGridViewTextBoxColumn.Width = 125;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(31, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Planilla:";
             // 
-            // afpEmpleadorDataGridViewTextBoxColumn
+            // LblNombrePlanilla
             // 
-            this.afpEmpleadorDataGridViewTextBoxColumn.DataPropertyName = "afpEmpleador";
-            this.afpEmpleadorDataGridViewTextBoxColumn.HeaderText = "afpEmpleador";
-            this.afpEmpleadorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.afpEmpleadorDataGridViewTextBoxColumn.Name = "afpEmpleadorDataGridViewTextBoxColumn";
-            this.afpEmpleadorDataGridViewTextBoxColumn.Width = 125;
+            this.LblNombrePlanilla.AutoSize = true;
+            this.LblNombrePlanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblNombrePlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNombrePlanilla.Location = new System.Drawing.Point(99, 27);
+            this.LblNombrePlanilla.Name = "LblNombrePlanilla";
+            this.LblNombrePlanilla.Size = new System.Drawing.Size(2, 22);
+            this.LblNombrePlanilla.TabIndex = 1;
             // 
-            // rentaDataGridViewTextBoxColumn
+            // label2
             // 
-            this.rentaDataGridViewTextBoxColumn.DataPropertyName = "renta";
-            this.rentaDataGridViewTextBoxColumn.HeaderText = "renta";
-            this.rentaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rentaDataGridViewTextBoxColumn.Name = "rentaDataGridViewTextBoxColumn";
-            this.rentaDataGridViewTextBoxColumn.Width = 125;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fecha:";
             // 
-            // Actualizar
+            // LblFechaPlanilla
             // 
-            this.Actualizar.DataPropertyName = "Id";
-            this.Actualizar.HeaderText = "";
-            this.Actualizar.MinimumWidth = 6;
-            this.Actualizar.Name = "Actualizar";
-            this.Actualizar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Actualizar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Actualizar.Width = 125;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.DataPropertyName = "Id";
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Width = 125;
+            this.LblFechaPlanilla.AutoSize = true;
+            this.LblFechaPlanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LblFechaPlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaPlanilla.Location = new System.Drawing.Point(99, 61);
+            this.LblFechaPlanilla.Name = "LblFechaPlanilla";
+            this.LblFechaPlanilla.Size = new System.Drawing.Size(2, 22);
+            this.LblFechaPlanilla.TabIndex = 1;
             // 
             // FrmDetaPlanilla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 441);
-            this.Controls.Add(this.GbxControlesDetaPlanilla);
+            this.ClientSize = new System.Drawing.Size(700, 358);
+            this.Controls.Add(this.LblFechaPlanilla);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LblNombrePlanilla);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.DgvDetaPlanilla);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmDetaPlanilla";
             this.Text = "FrmDetaPlanilla";
             this.Load += new System.EventHandler(this.FrmDetaPlanilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetaPlanilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaPlanillaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proyectoPlanillaDataSet)).EndInit();
-            this.GbxControlesDetaPlanilla.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,17 +198,16 @@
         private ProyectoPlanillaDataSet proyectoPlanillaDataSet;
         private System.Windows.Forms.BindingSource detaPlanillaBindingSource;
         private ProyectoPlanillaDataSetTableAdapters.DetaPlanillaTableAdapter detaPlanillaTableAdapter;
-        private System.Windows.Forms.GroupBox GbxControlesDetaPlanilla;
-        private System.Windows.Forms.Button CmdCrearDetallePlanila;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPlanillaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sueldoBaseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isssDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn afpEmpleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn afpEmpleadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rentaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Actualizar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSueldoBase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColIsss;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAfpEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAfpEmpleador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColRenta;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblNombrePlanilla;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblFechaPlanilla;
     }
 }

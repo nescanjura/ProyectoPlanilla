@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mANTENIMIENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eMPLEADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gERENCIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pROCESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gENERARPLANILLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cONSULTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hISTORICOPLANILLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Mantenimiento = new System.Windows.Forms.ToolStripMenuItem();
+            this.Usuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.Empleado = new System.Windows.Forms.ToolStripMenuItem();
+            this.Gerencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.Planilla = new System.Windows.Forms.ToolStripMenuItem();
+            this.GenerarPlanilla = new System.Windows.Forms.ToolStripMenuItem();
+            this.Planillas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,85 +43,77 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mANTENIMIENTOToolStripMenuItem,
-            this.pROCESOToolStripMenuItem,
-            this.cONSULTASToolStripMenuItem});
+            this.Mantenimiento,
+            this.Planilla});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1513, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1028, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // mANTENIMIENTOToolStripMenuItem
+            // Mantenimiento
             // 
-            this.mANTENIMIENTOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uSUARIOToolStripMenuItem,
-            this.eMPLEADOToolStripMenuItem,
-            this.gERENCIAToolStripMenuItem});
-            this.mANTENIMIENTOToolStripMenuItem.Name = "mANTENIMIENTOToolStripMenuItem";
-            this.mANTENIMIENTOToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.mANTENIMIENTOToolStripMenuItem.Text = "MANTENIMIENTO";
+            this.Mantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Usuario,
+            this.Empleado,
+            this.Gerencia});
+            this.Mantenimiento.Name = "Mantenimiento";
+            this.Mantenimiento.Size = new System.Drawing.Size(116, 20);
+            this.Mantenimiento.Text = "MANTENIMIENTO";
             // 
-            // uSUARIOToolStripMenuItem
+            // Usuario
             // 
-            this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
-            this.uSUARIOToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.uSUARIOToolStripMenuItem.Text = "USUARIO";
-            this.uSUARIOToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOToolStripMenuItem_Click);
+            this.Usuario.Name = "Usuario";
+            this.Usuario.Size = new System.Drawing.Size(152, 22);
+            this.Usuario.Text = "USUARIO";
+            this.Usuario.Click += new System.EventHandler(this.uSUARIOToolStripMenuItem_Click);
             // 
-            // eMPLEADOToolStripMenuItem
+            // Empleado
             // 
-            this.eMPLEADOToolStripMenuItem.Name = "eMPLEADOToolStripMenuItem";
-            this.eMPLEADOToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.eMPLEADOToolStripMenuItem.Text = "EMPLEADO";
-            this.eMPLEADOToolStripMenuItem.Click += new System.EventHandler(this.eMPLEADOToolStripMenuItem_Click);
+            this.Empleado.Name = "Empleado";
+            this.Empleado.Size = new System.Drawing.Size(152, 22);
+            this.Empleado.Text = "EMPLEADO";
+            this.Empleado.Click += new System.EventHandler(this.eMPLEADOToolStripMenuItem_Click);
             // 
-            // gERENCIAToolStripMenuItem
+            // Gerencia
             // 
-            this.gERENCIAToolStripMenuItem.Name = "gERENCIAToolStripMenuItem";
-            this.gERENCIAToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.gERENCIAToolStripMenuItem.Text = "GERENCIA";
-            this.gERENCIAToolStripMenuItem.Click += new System.EventHandler(this.gERENCIAToolStripMenuItem_Click);
+            this.Gerencia.Name = "Gerencia";
+            this.Gerencia.Size = new System.Drawing.Size(152, 22);
+            this.Gerencia.Text = "GERENCIA";
+            this.Gerencia.Click += new System.EventHandler(this.gERENCIAToolStripMenuItem_Click);
             // 
-            // pROCESOToolStripMenuItem
+            // Planilla
             // 
-            this.pROCESOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gENERARPLANILLAToolStripMenuItem});
-            this.pROCESOToolStripMenuItem.Name = "pROCESOToolStripMenuItem";
-            this.pROCESOToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.pROCESOToolStripMenuItem.Text = "PROCESO";
+            this.Planilla.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Planillas,
+            this.GenerarPlanilla});
+            this.Planilla.Name = "Planilla";
+            this.Planilla.Size = new System.Drawing.Size(72, 20);
+            this.Planilla.Text = "PLANILLA";
             // 
-            // gENERARPLANILLAToolStripMenuItem
+            // GenerarPlanilla
             // 
-            this.gENERARPLANILLAToolStripMenuItem.Name = "gENERARPLANILLAToolStripMenuItem";
-            this.gENERARPLANILLAToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.gENERARPLANILLAToolStripMenuItem.Text = "GENERAR PLANILLA";
-            this.gENERARPLANILLAToolStripMenuItem.Click += new System.EventHandler(this.gENERARPLANILLAToolStripMenuItem_Click);
+            this.GenerarPlanilla.Name = "GenerarPlanilla";
+            this.GenerarPlanilla.Size = new System.Drawing.Size(152, 22);
+            this.GenerarPlanilla.Text = "CONSULTAR";
+            this.GenerarPlanilla.Click += new System.EventHandler(this.gENERARPLANILLAToolStripMenuItem_Click);
             // 
-            // cONSULTASToolStripMenuItem
+            // Planillas
             // 
-            this.cONSULTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hISTORICOPLANILLAToolStripMenuItem});
-            this.cONSULTASToolStripMenuItem.Name = "cONSULTASToolStripMenuItem";
-            this.cONSULTASToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.cONSULTASToolStripMenuItem.Text = "CONSULTAS";
-            // 
-            // hISTORICOPLANILLAToolStripMenuItem
-            // 
-            this.hISTORICOPLANILLAToolStripMenuItem.Name = "hISTORICOPLANILLAToolStripMenuItem";
-            this.hISTORICOPLANILLAToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            this.hISTORICOPLANILLAToolStripMenuItem.Text = "HISTORICO PLANILLA";
-            this.hISTORICOPLANILLAToolStripMenuItem.Click += new System.EventHandler(this.hISTORICOPLANILLAToolStripMenuItem_Click);
+            this.Planillas.Name = "Planillas";
+            this.Planillas.Size = new System.Drawing.Size(152, 22);
+            this.Planillas.Text = "PLANILLAS";
+            this.Planillas.Click += new System.EventHandler(this.Planillas_Click);
             // 
             // FrmPantallaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1513, 747);
+            this.ClientSize = new System.Drawing.Size(1028, 607);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPantallaPrincipal";
             this.Text = "Pantalla Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -136,14 +127,13 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mANTENIMIENTOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uSUARIOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eMPLEADOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pROCESOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gENERARPLANILLAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cONSULTASToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gERENCIAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hISTORICOPLANILLAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Mantenimiento;
+        private System.Windows.Forms.ToolStripMenuItem Usuario;
+        private System.Windows.Forms.ToolStripMenuItem Empleado;
+        private System.Windows.Forms.ToolStripMenuItem Planilla;
+        private System.Windows.Forms.ToolStripMenuItem GenerarPlanilla;
+        private System.Windows.Forms.ToolStripMenuItem Gerencia;
+        private System.Windows.Forms.ToolStripMenuItem Planillas;
     }
 }
 

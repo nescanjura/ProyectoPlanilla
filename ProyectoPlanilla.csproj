@@ -277,6 +277,8 @@
     <Content Include="ProyectoPlanilla.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\list.png" />
     <None Include="Resources\enable.png" />
     <None Include="Resources\disable.png" />
     <None Include="Resources\check.png" />
